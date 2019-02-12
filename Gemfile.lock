@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubybear (0.4.3)
+    rubybear (0.0.1)
       awesome_print (~> 1.7, >= 1.7.0)
       bitcoin-ruby (~> 0.0, >= 0.0.11)
       ffi (~> 1.9, >= 1.9.18)
