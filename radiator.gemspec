@@ -6,12 +6,12 @@ require 'radiator/version'
 Gem::Specification.new do |spec|
   spec.name = 'radiator'
   spec.version = Radiator::VERSION
-  spec.authors = ['Anthony Martin']
-  spec.email = ['radiator@martin-studio.com']
+  spec.authors = ['Bilal Haider']
+  spec.email = ['bilal_haider032@yahoo.com']
 
   spec.summary = %q{BEARS RPC Ruby Client}
   spec.description = %q{Client for accessing the BEARS blockchain.}
-  spec.homepage = 'https://github.com/inertia186/radiator'
+  spec.homepage = 'https://github.com/bearshares/rubybear'
   spec.license = 'CC0-1.0'
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test)/}) }
