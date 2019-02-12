@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"market_history_api.get_market_history","params":null,"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:05:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '405'
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000516492152823108'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde35b-f43fa77d98fb14f7743846e4
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","error":{"code":-32000,"message":"Bad Cast:Invalid
+        cast from type ''null_type'' to Object","data":{"code":7,"name":"bad_cast_exception","message":"Bad
+        Cast","stack":[{"context":{"level":"error","file":"variant.cpp","line":575,"method":"get_object","hostname":"","timestamp":"2018-11-03T18:05:15"},"format":"Invalid
+        cast from type ''${type}'' to Object","data":{"type":"null_type"}}]}},"id":1}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:05:15 GMT
+recorded_with: VCR 3.0.3

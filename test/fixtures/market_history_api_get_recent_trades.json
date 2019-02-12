@@ -1,0 +1,55 @@
+{
+   "id":1,
+   "result":[
+      {
+         "date":"2016-09-08T05:21:51",
+         "current_pays":"16.311 BEARS",
+         "open_pays":"15.000 BSD"
+      },
+      {
+         "date":"2016-09-08T05:17:18",
+         "current_pays":"5.316 BEARS",
+         "open_pays":"5.000 BSD"
+      },
+      {
+         "date":"2016-09-08T04:07:42",
+         "current_pays":"0.178 BSD",
+         "open_pays":"0.188 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:41:21",
+         "current_pays":"0.535 BSD",
+         "open_pays":"0.567 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:40:36",
+         "current_pays":"0.181 BSD",
+         "open_pays":"0.191 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:09:51",
+         "current_pays":"0.064 BSD",
+         "open_pays":"0.081 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:09:36",
+         "current_pays":"1.040 BSD",
+         "open_pays":"1.298 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:09:24",
+         "current_pays":"1.021 BSD",
+         "open_pays":"1.274 BEARS"
+      },
+      {
+         "date":"2016-09-08T03:09:18",
+         "current_pays":"1.000 BEARS",
+         "open_pays":"0.801 BSD"
+      },
+      {
+         "date":"2016-09-08T03:09:18",
+         "current_pays":"2.000 BEARS",
+         "open_pays":"1.602 BSD"
+      }
+   ]
+}

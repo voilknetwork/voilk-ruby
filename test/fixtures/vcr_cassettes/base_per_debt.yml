@@ -1,0 +1,221 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_feed_history","params":[],"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:05:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_feed_history.params=[]
+      X-Jussi-Request-Id:
+      - '000624806721746715'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde384-386f37c053ad5bb49378d7c8
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1,"jsonrpc":"2.0","result":{"id":0,"current_median_history":{"base":"0.803
+        BSD","quote":"1.000 BEARS"},"price_history":[{"base":"0.769 BSD","quote":"1.000
+        BEARS"},{"base":"0.768 BSD","quote":"1.000 BEARS"},{"base":"0.768 BSD","quote":"1.000
+        BEARS"},{"base":"0.768 BSD","quote":"1.000 BEARS"},{"base":"0.782 BSD","quote":"1.000
+        BEARS"},{"base":"0.800 BSD","quote":"1.000 BEARS"},{"base":"0.800 BSD","quote":"1.000
+        BEARS"},{"base":"0.800 BSD","quote":"1.000 BEARS"},{"base":"0.799 BSD","quote":"1.000
+        BEARS"},{"base":"0.794 BSD","quote":"1.000 BEARS"},{"base":"0.786 BSD","quote":"1.000
+        BEARS"},{"base":"0.790 BSD","quote":"1.000 BEARS"},{"base":"0.794 BSD","quote":"1.000
+        BEARS"},{"base":"0.795 BSD","quote":"1.000 BEARS"},{"base":"0.795 BSD","quote":"1.000
+        BEARS"},{"base":"0.795 BSD","quote":"1.000 BEARS"},{"base":"0.795 BSD","quote":"1.000
+        BEARS"},{"base":"0.797 BSD","quote":"1.000 BEARS"},{"base":"0.800 BSD","quote":"1.000
+        BEARS"},{"base":"0.800 BSD","quote":"1.000 BEARS"},{"base":"0.799 BSD","quote":"1.000
+        BEARS"},{"base":"0.799 BSD","quote":"1.000 BEARS"},{"base":"0.799 BSD","quote":"1.000
+        BEARS"},{"base":"0.798 BSD","quote":"1.000 BEARS"},{"base":"0.798 BSD","quote":"1.000
+        BEARS"},{"base":"0.809 BSD","quote":"1.000 BEARS"},{"base":"0.822 BSD","quote":"1.000
+        BEARS"},{"base":"0.826 BSD","quote":"1.000 BEARS"},{"base":"0.822 BSD","quote":"1.000
+        BEARS"},{"base":"0.821 BSD","quote":"1.000 BEARS"},{"base":"0.814 BSD","quote":"1.000
+        BEARS"},{"base":"0.814 BSD","quote":"1.000 BEARS"},{"base":"0.818 BSD","quote":"1.000
+        BEARS"},{"base":"0.817 BSD","quote":"1.000 BEARS"},{"base":"0.817 BSD","quote":"1.000
+        BEARS"},{"base":"0.818 BSD","quote":"1.000 BEARS"},{"base":"0.816 BSD","quote":"1.000
+        BEARS"},{"base":"0.814 BSD","quote":"1.000 BEARS"},{"base":"0.815 BSD","quote":"1.000
+        BEARS"},{"base":"0.815 BSD","quote":"1.000 BEARS"},{"base":"0.815 BSD","quote":"1.000
+        BEARS"},{"base":"0.814 BSD","quote":"1.000 BEARS"},{"base":"0.813 BSD","quote":"1.000
+        BEARS"},{"base":"0.811 BSD","quote":"1.000 BEARS"},{"base":"0.812 BSD","quote":"1.000
+        BEARS"},{"base":"0.812 BSD","quote":"1.000 BEARS"},{"base":"0.812 BSD","quote":"1.000
+        BEARS"},{"base":"0.811 BSD","quote":"1.000 BEARS"},{"base":"0.810 BSD","quote":"1.000
+        BEARS"},{"base":"0.810 BSD","quote":"1.000 BEARS"},{"base":"0.809 BSD","quote":"1.000
+        BEARS"},{"base":"0.809 BSD","quote":"1.000 BEARS"},{"base":"0.809 BSD","quote":"1.000
+        BEARS"},{"base":"0.809 BSD","quote":"1.000 BEARS"},{"base":"0.809 BSD","quote":"1.000
+        BEARS"},{"base":"0.810 BSD","quote":"1.000 BEARS"},{"base":"0.809 BSD","quote":"1.000
+        BEARS"},{"base":"0.809 BSD","quote":"1.000 BEARS"},{"base":"0.808 BSD","quote":"1.000
+        BEARS"},{"base":"0.806 BSD","quote":"1.000 BEARS"},{"base":"0.803 BSD","quote":"1.000
+        BEARS"},{"base":"0.804 BSD","quote":"1.000 BEARS"},{"base":"0.803 BSD","quote":"1.000
+        BEARS"},{"base":"0.803 BSD","quote":"1.000 BEARS"},{"base":"0.803 BSD","quote":"1.000
+        BEARS"},{"base":"0.803 BSD","quote":"1.000 BEARS"},{"base":"0.803 BSD","quote":"1.000
+        BEARS"},{"base":"0.803 BSD","quote":"1.000 BEARS"},{"base":"0.797 BSD","quote":"1.000
+        BEARS"},{"base":"0.795 BSD","quote":"1.000 BEARS"},{"base":"0.793 BSD","quote":"1.000
+        BEARS"},{"base":"0.791 BSD","quote":"1.000 BEARS"},{"base":"0.789 BSD","quote":"1.000
+        BEARS"},{"base":"0.789 BSD","quote":"1.000 BEARS"},{"base":"0.788 BSD","quote":"1.000
+        BEARS"},{"base":"0.790 BSD","quote":"1.000 BEARS"},{"base":"0.787 BSD","quote":"1.000
+        BEARS"},{"base":"0.786 BSD","quote":"1.000 BEARS"},{"base":"0.785 BSD","quote":"1.000
+        BEARS"},{"base":"0.786 BSD","quote":"1.000 BEARS"},{"base":"0.786 BSD","quote":"1.000
+        BEARS"},{"base":"0.785 BSD","quote":"1.000 BEARS"},{"base":"0.785 BSD","quote":"1.000
+        BEARS"},{"base":"0.785 BSD","quote":"1.000 BEARS"}]}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:05:56 GMT
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_dynamic_global_properties","params":[],"id":2}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:05:56 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000230298839311592'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde384-58c522ba69ca79dc837a335b
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2,"jsonrpc":"2.0","result":{"head_block_number":27382698,"head_block_id":"01a1d3aaff285629a48f7fe29431fdbca7852bdb","time":"2018-11-03T18:05:54","current_witness":"timcliff","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803369.527
+        BEARS","current_supply":"279838987.070 BEARS","confidential_supply":"0.000
+        BEARS","current_bsd_supply":"15228399.113 BSD","confidential_bsd_supply":"0.000
+        BSD","total_coining_fund_bears":"198432601.839 BEARS","total_coining_shares":"400139705141.779328
+        COINS","total_reward_fund_bears":"0.000 BEARS","total_reward_shares2":"0","pending_rewarded_coining_shares":"477734903.484666
+        COINS","pending_rewarded_coining_bears":"234404.449 BEARS","bsd_interest_rate":0,"bsd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477718,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382683,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"bsd_stop_percent":1000,"bsd_start_percent":900}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:05:56 GMT
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_dynamic_global_properties","params":[],"id":3}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:18:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000063928901746968'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde683-0521443852c32569fc65fc6e
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":3,"jsonrpc":"2.0","result":{"head_block_number":27382954,"head_block_id":"01a1d4aa65f71c04d0311fbae814a1a0b93e281b","time":"2018-11-03T18:18:42","current_witness":"xeldal","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803993.505
+        BEARS","current_supply":"279839397.456 BEARS","confidential_supply":"0.000
+        BEARS","current_bsd_supply":"15228570.628 BSD","confidential_bsd_supply":"0.000
+        BSD","total_coining_fund_bears":"198431545.348 BEARS","total_coining_shares":"400137383788.659991
+        COINS","total_reward_fund_bears":"0.000 BEARS","total_reward_shares2":"0","pending_rewarded_coining_shares":"477538679.186207
+        COINS","pending_rewarded_coining_bears":"234307.181 BEARS","bsd_interest_rate":0,"bsd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477974,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382935,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"bsd_stop_percent":1000,"bsd_start_percent":900}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:18:43 GMT
+recorded_with: VCR 3.0.3

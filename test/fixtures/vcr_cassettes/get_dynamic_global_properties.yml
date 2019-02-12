@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_dynamic_global_properties","params":[],"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:05:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Cache-Hit:
+      - appbase.condenser_api.get_dynamic_global_properties.params=[]
+      X-Jussi-Request-Id:
+      - '000325093747966126'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde385-a770cc1e8449b9a4aa06ea8c
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":1,"jsonrpc":"2.0","result":{"head_block_number":27382699,"head_block_id":"01a1d3ab5ea7a3f041d5f14ee4c77edd5b98b0a2","time":"2018-11-03T18:05:57","current_witness":"good-karma","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803371.957
+        BEARS","current_supply":"279838989.500 BEARS","confidential_supply":"0.000
+        BEARS","current_bsd_supply":"15228399.113 BSD","confidential_bsd_supply":"0.000
+        BSD","total_coining_fund_bears":"198432602.417 BEARS","total_coining_shares":"400139705561.211708
+        COINS","total_reward_fund_bears":"0.000 BEARS","total_reward_shares2":"0","pending_rewarded_coining_shares":"477734903.484666
+        COINS","pending_rewarded_coining_bears":"234404.449 BEARS","bsd_interest_rate":0,"bsd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477719,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382683,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"bsd_stop_percent":1000,"bsd_start_percent":900}}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:05:57 GMT
+recorded_with: VCR 3.0.3

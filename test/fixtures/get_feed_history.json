@@ -1,0 +1,684 @@
+{
+  "id": 1,
+  "result": {
+    "id": "2.14.0",
+    "current_median_history": {
+      "base": "1.487 BSD",
+      "quote": "1.000 BEARS"
+    },
+    "price_history": [
+      {
+        "base": "1.471 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.471 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.444 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.471 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.444 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.419 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.444 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.440 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.434 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.436 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.429 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.436 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.436 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.398 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.408 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.408 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.410 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.418 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.436 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.488 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.508 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.500 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.464 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.509 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.527 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.533 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.569 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.546 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.530 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.524 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.607 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.585 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.569 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.554 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.554 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.518 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.542 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.542 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.537 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.534 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.515 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.515 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.495 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.483 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.491 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.483 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.493 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.475 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.475 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.475 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.471 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.471 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.476 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.478 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.478 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.476 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.476 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.495 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.509 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.487 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.487 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.487 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.480 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.483 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.475 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.474 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.474 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.473 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.473 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.473 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.473 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.487 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.475 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.469 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.467 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.468 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.469 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.469 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.469 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.468 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.468 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.451 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.451 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.451 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.450 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.383 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.391 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.393 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.398 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.403 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.405 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.398 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.390 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.410 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.441 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.410 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.427 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.429 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.511 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.519 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.520 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.511 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.518 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.520 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.512 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.500 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.500 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.501 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.545 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.549 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.549 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.549 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.542 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.541 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.532 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.542 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.538 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.532 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.541 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.542 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.546 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.543 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.546 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.549 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.549 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.554 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.550 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.554 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.557 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.548 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.538 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.532 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.530 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.509 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.509 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.470 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.478 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.478 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.487 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.488 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.481 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.463 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.445 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.463 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.464 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.461 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.463 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.492 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.492 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.495 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.504 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.535 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.532 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.535 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.510 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.510 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.486 BSD",
+        "quote": "1.000 BEARS"
+      },
+      {
+        "base": "1.481 BSD",
+        "quote": "1.000 BEARS"
+      }
+    ]
+  }
+}

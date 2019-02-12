@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bearshares.com/
+    body:
+      encoding: UTF-8
+      string: '{"jsonrpc":"2.0","method":"condenser_api.get_accounts","params":[["ned"]],"id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - radiator/0.4.3rc1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 03 Nov 2018 18:05:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Jussi-Request-Id:
+      - '000723170428595477'
+      X-Amzn-Trace-Id:
+      - Root=1-5bdde385-4091edd6f2a19abc6ecc7278
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range
+      Strict-Transport-Security:
+      - max-age=31557600; includeSubDomains; preload
+      Content-Security-Policy:
+      - upgrade-insecure-requests
+    body:
+      encoding: ASCII-8BIT
+      string: '{"jsonrpc":"2.0","result":[{"id":497,"name":"ned","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR71f6yWztimJuREVyyMXNqAVbx1FzPVW6LLXNoQ35dHwKuszmHX",1]]},"active":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR7RyrKG8e3fUtPD2JH9AB8K1p7ypsLUDPMuiV1gtD4DbNuk6nBw",1]]},"posting":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR6rHZiAKHZS19RSJuRmn3mdukj95AYgUNFCEgnm8jhZE3rcH72P",1]]},"memo_key":"SHR6sUWU9dtss1N8m7tQfUt7PacNHACrt3jBZNtkYkMMBv3e4CH3p","json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/encrypted-tbn0.gstatic.com\/images?q=tbn:ANd9GcTgUknIiTNArR2xcz4XCyIMDRdmjAJV3JdJb0VspRuVfyYwbjb7\",\"location\":\"Welcome
+        to Bearshares!\",\"name\":\"ned\",\"cover_image\":\"https:\/\/bearshares.com\/images\/bearshares.png\",\"website\":\"https:\/\/smt.bears.io\"}}","proxy":"","last_owner_update":"2017-03-02T00:20:39","last_account_update":"2018-02-28T19:34:39","created":"2016-03-31T14:21:45","mined":false,"recovery_account":"bears","last_account_recovery":"1970-01-01T00:00:00","reset_account":"null","comment_count":0,"lifetime_vote_count":0,"post_count":958,"can_vote":true,"voting_manabar":{"current_mana":"3688129255321180","last_update_time":1539801144},"voting_power":4389,"balance":"280190.128
+        BEARS","savings_balance":"0.000 BEARS","bsd_balance":"5754.672 BSD","bsd_seconds":"4925110913661","bsd_seconds_last_update":"2018-11-01T21:33:09","bsd_last_interest_payment":"2018-10-22T23:49:03","savings_bsd_balance":"1249.949
+        BSD","savings_bsd_seconds":"0","savings_bsd_seconds_last_update":"2017-01-01T19:19:27","savings_bsd_last_interest_payment":"2017-01-01T19:19:27","savings_withdraw_requests":0,"reward_bsd_balance":"1063.707
+        BSD","reward_bears_balance":"6.001 BEARS","reward_coining_balance":"8668635.913926
+        COINS","reward_coining_bears":"4223.658 BEARS","coining_shares":"3122975028.085982
+        COINS","delegated_coining_shares":"0.000000 COINS","received_coining_shares":"12166.416166
+        COINS","coining_withdraw_rate":"282571030.409516 COINS","next_coining_withdrawal":"2018-11-08T23:09:06","withdrawn":"565142060819032","to_withdraw":"3673423395323719","withdraw_routes":0,"curation_rewards":734763563,"posting_rewards":8661685,"proxied_vsf_votes":["106067775815213",0,0,0],"witnesses_voted_for":0,"last_post":"2018-11-01T20:41:51","last_root_post":"2018-11-01T20:41:51","last_vote_time":"2018-10-14T23:12:03","post_bandwidth":10000,"pending_claimed_accounts":0,"coining_balance":"0.000
+        BEARS","reputation":"91046600629636","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":[],"tags_usage":[],"guest_bloggers":[]}],"id":1}'
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 18:05:57 GMT
+recorded_with: VCR 3.0.3
