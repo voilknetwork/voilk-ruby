@@ -1,7 +1,7 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'yard'
-require 'radiator'
+require 'rubybear'
 require 'awesome_print'
 
 Rake::TestTask.new(:test) do |t|
@@ -36,7 +36,7 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   # url = 'https://testnet.bearsharesdev.com/' # use testnet
   url = nil # use default
   options = {chain: chain, wif: posting_wif, url: url}
-  tx = Radiator::Transaction.new(options)
+  tx = Rubybear::Transaction.new(options)
   tx.operations << {
     type: :claim_reward_balance,
     account: account_name,
@@ -69,7 +69,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   elapsed = 0
   count = 0
   
-  Radiator::Stream.new(options).blocks do |b, n, api|
+  Rubybear::Stream.new(options).blocks do |b, n, api|
     start = Time.now.utc
     
     if last_block_number == 0
@@ -107,7 +107,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
         puts "#{n}: #{b.witness}; trx: #{t_size}; op: #{op_size}, vop: #{vop_size} (cumulative vop ratio: #{('%.2f' % (vop_ratio * 100))} %; average #{((elapsed / count) * 1000).to_i}ms)"
       end
     else
-      # This should not happen.  If it does, there's likely a bug in Radiator.
+      # This should not happen.  If it does, there's likely a bug in Rubybear.
       
       puts "Error, last block number was #{last_block_number}, did not expect #{n}."
     end
@@ -116,25 +116,25 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   end
 end
 
-desc 'Ruby console with radiator already required.'
+desc 'Ruby console with rubybear already required.'
 task :console do
-  exec "irb -r radiator -I ./lib"
+  exec "irb -r rubybear -I ./lib"
 end
 
-desc 'Build a new version of the radiator gem.'
+desc 'Build a new version of the rubybear gem.'
 task :build do
-  exec 'gem build radiator.gemspec'
+  exec 'gem build rubybear.gemspec'
 end
 
-desc 'Publish the current version of the radiator gem.'
+desc 'Publish the current version of the rubybear gem.'
 task :push do
-  exec "gem push radiator-#{Radiator::VERSION}.gem"
+  exec "gem push rubybear-#{Rubybear::VERSION}.gem"
 end
 
 # We're not going to yank on a regular basis, but this is how it's done if you
 # really want a task for that for some reason.
 
-# desc 'Yank the current version of the radiator gem.'
+# desc 'Yank the current version of the rubybear gem.'
 # task :yank do
-#   exec "gem yank radiator -v #{Radiator::VERSION}"
+#   exec "gem yank rubybear -v #{Rubybear::VERSION}"
 # end

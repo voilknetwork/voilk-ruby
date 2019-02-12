@@ -6,7 +6,7 @@ if ENV["HELL_ENABLED"]
   SimpleCov.merge_timeout 3600
 end
 
-require 'radiator'
+require 'rubybear'
 
 require 'minitest/autorun'
 
@@ -36,7 +36,7 @@ if defined? WebMock
   WebMock.disable_net_connect!(allow_localhost: false, allow: 'codeclimate.com:443')
 end
 
-class Radiator::Test < MiniTest::Test
+class Rubybear::Test < MiniTest::Test
   defined? prove_it! and prove_it!
   
   def chain_options

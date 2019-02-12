@@ -1,37 +1,37 @@
-[![Build Status](https://travis-ci.org/inertia186/radiator.svg?branch=master)](https://travis-ci.org/inertia186/radiator)
-[![Code Climate](https://codeclimate.com/github/inertia186/radiator/badges/gpa.svg)](https://codeclimate.com/github/inertia186/radiator)
-[![Test Coverage](https://codeclimate.com/github/inertia186/radiator/badges/coverage.svg)](https://codeclimate.com/github/inertia186/radiator)
-[![Inline docs](http://inch-ci.org/github/inertia186/radiator.svg?branch=master&style=shields)](http://inch-ci.org/github/inertia186/radiator)
+[![Build Status](https://travis-ci.org/inertia186/rubybear.svg?branch=master)](https://travis-ci.org/inertia186/rubybear)
+[![Code Climate](https://codeclimate.com/github/inertia186/rubybear/badges/gpa.svg)](https://codeclimate.com/github/inertia186/rubybear)
+[![Test Coverage](https://codeclimate.com/github/inertia186/rubybear/badges/coverage.svg)](https://codeclimate.com/github/inertia186/rubybear)
+[![Inline docs](http://inch-ci.org/github/inertia186/rubybear.svg?branch=master&style=shields)](http://inch-ci.org/github/inertia186/rubybear)
 
-[radiator](https://github.com/inertia186/radiator)
+[rubybear](https://github.com/inertia186/rubybear)
 ========
 
 #### BEARS Ruby API Client
 
-Radiator is an API Client for interaction with the BEARS network using Ruby.
+Rubybear is an API Client for interaction with the BEARS network using Ruby.
 
 #### Changes in v0.4.0
 
 * Gem updates
 * **AppBase Support**
-  * Defaulting to `condenser_api.*` in `Radiator::Api` (see below)
+  * Defaulting to `condenser_api.*` in `Rubybear::Api` (see below)
   * Handle/recover from new `AppBase` errors.
-* `Radiator::Stream` now detects if it's stalled and takes action if it has to wait too long for a new block.
+* `Rubybear::Stream` now detects if it's stalled and takes action if it has to wait too long for a new block.
   1. Exponential back-off for stalls so that the node doesn't get slammed.
   2. Short delays (3 times block production) only result in a warning.
   3. Long delays (6 times block production) may try to switch to an alternate node.
 * Fixed internal logging bug that would open too many files.
-  * This fix also mitigates issues like `SSL Verify` problems (similar to [#12](https://github.com/inertia186/radiator/issues/12))
+  * This fix also mitigates issues like `SSL Verify` problems (similar to [#12](https://github.com/inertia186/rubybear/issues/12))
 * Dropped GOLOS support.
 
 **Appbase is now supported.**
 
-If you were already using `Radiator::Api` then there is nothing to change.  But if you made use of other API classes, like `Radiator::FollowApi`, then the method signatures have changed.
+If you were already using `Rubybear::Api` then there is nothing to change.  But if you made use of other API classes, like `Rubybear::FollowApi`, then the method signatures have changed.
 
 **Pre-AppBase:**
 
 ```ruby
-api = Radiator::FollowApi.new
+api = Rubybear::FollowApi.new
 
 api.get_followers('inertia', 0, 'blog', 10)
 ```
@@ -39,7 +39,7 @@ api.get_followers('inertia', 0, 'blog', 10)
 **New Signature:**
 
 ```ruby
-api = Radiator::FollowApi.new
+api = Rubybear::FollowApi.new
 
 api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 10)
 ```
@@ -48,21 +48,21 @@ api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 10)
 
 **Switch to Condenser API:**
 
-The other strategy for using this version of Radiator is to just switch away from classes like `Radiator::FollowApi` over to `Radiator::Api` (also known as `Radiator::CondenserApi`) instead.  Then you don't have to update individual method calls.
+The other strategy for using this version of Rubybear is to just switch away from classes like `Rubybear::FollowApi` over to `Rubybear::Api` (also known as `Rubybear::CondenserApi`) instead.  Then you don't have to update individual method calls.
 
 ```ruby
-api = Radiator::Api.new
+api = Rubybear::Api.new
 
 api.get_followers('inertia', 0, 'blog', 10)
 ```
 
 **Note about GOLOS**
 
-GOLOS is no longer supported in Radiator.  If you want to continue to use GOLOS, you'll need to branch from v0.3.15 (pre-appbase) and add WebSockets support because GOLOS completely dropped JSON-RPC over HTTP clients support for some reason 
+GOLOS is no longer supported in Rubybear.  If you want to continue to use GOLOS, you'll need to branch from v0.3.15 (pre-appbase) and add WebSockets support because GOLOS completely dropped JSON-RPC over HTTP clients support for some reason 
 
-Radiator has never and will never use WebSockets due to its server scalability requirements.
+Rubybear has never and will never use WebSockets due to its server scalability requirements.
 
-From a client perspective, WebSockets is *great*.  **I have nothing against WebSockets.**  So I might get around to it at some point, but GOLOS won't be part of Radiator anymore mainly because GOLOS has no plans to implement AppBase.
+From a client perspective, WebSockets is *great*.  **I have nothing against WebSockets.**  So I might get around to it at some point, but GOLOS won't be part of Rubybear anymore mainly because GOLOS has no plans to implement AppBase.
 
 #### Changes in v0.3.0
 
@@ -70,7 +70,7 @@ From a client perspective, WebSockets is *great*.  **I have nothing against WebS
 * Added failover subroutines (see Failover section, below).
 * Added method closures support (aka passing a block to yield).
 * You can now stream virtual operations (see Streaming section, below).
-* Added more [documentation](http://www.rubydoc.info/gems/radiator).
+* Added more [documentation](http://www.rubydoc.info/gems/rubybear).
 * Added/expanded more api namespaces: `::BlockApi`, `::CondenserApi`, `::TagApi`
 * Addressed an issue with logging on certain Windows configurations.
 
@@ -94,7 +94,7 @@ From a client perspective, WebSockets is *great*.  **I have nothing against WebS
 
 ---
 
-Also see: [Documentation](http://www.rubydoc.info/gems/radiator)
+Also see: [Documentation](http://www.rubydoc.info/gems/rubybear)
 
 ---
 
@@ -103,7 +103,7 @@ Also see: [Documentation](http://www.rubydoc.info/gems/radiator)
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'radiator'
+gem 'rubybear'
 ```
 
 Then:
@@ -134,9 +134,9 @@ $ gem install bundler
 ### Usage
 
 ```ruby
-require 'radiator'
+require 'rubybear'
 
-api = Radiator::Api.new
+api = Rubybear::Api.new
 api.get_dynamic_global_properties do |properties|
   properties.virtual_supply
 end
@@ -146,9 +146,9 @@ end
 ... or ...
 
 ```ruby
-require 'radiator'
+require 'rubybear'
 
-api = Radiator::Api.new
+api = Rubybear::Api.new
 response = api.get_dynamic_global_properties
 response.result.virtual_supply
 => "271342874.337 BEARS"
@@ -157,7 +157,7 @@ response.result.virtual_supply
 #### Follower API
 
 ```ruby
-api = Radiator::FollowApi.new
+api = Rubybear::FollowApi.new
 api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100) do |followers|
   followers.map(&:follower)
 end
@@ -186,9 +186,9 @@ end
 Here's an example of how to use a streaming instance to listen for votes:
 
 ```ruby
-require 'radiator'
+require 'rubybear'
 
-stream = Radiator::Stream.new
+stream = Rubybear::Stream.new
 
 stream.operations(:vote) do |op|
   print "#{op.voter} voted for #{op.author}"
@@ -374,10 +374,10 @@ Example of the output:
 
 #### Transaction Signing
 
-Radiator supports transaction signing, so you can use it to vote:
+Rubybear supports transaction signing, so you can use it to vote:
 
 ```ruby
-tx = Radiator::Transaction.new(wif: 'Your Wif Here')
+tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
 vote = {
   type: :vote,
   voter: 'xeroc',
@@ -393,14 +393,14 @@ tx.process(true)
 You can also post/comment:
 
 ```ruby
-tx = Radiator::Transaction.new(wif: 'Your Wif Here')
+tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
 comment = {
   type: :comment,
   parent_permlink: 'test',
   author: 'your-account',
   permlink: 'something-unique',
-  title: 'Radiator Can Post Comments!',
-  body: 'Yep, this post was created by Radiator in `ruby`.',
+  title: 'Rubybear Can Post Comments!',
+  body: 'Yep, this post was created by Rubybear in `ruby`.',
   json_metadata: '',
   parent_author: ''
 }
@@ -412,24 +412,24 @@ tx.process(true)
 Transfers:
 
 ```ruby
-tx = Radiator::Transaction.new(wif: 'Your Wif Here')
+tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
 transfer = {
   type: :transfer,
   from: 'ned',
   to: 'inertia',
   amount: '100000.000 BSD',
-  memo: 'Wow, inertia!  Radiator is great!'
+  memo: 'Wow, inertia!  Rubybear is great!'
 }
 
 tx.operations << transfer
 tx.process(true)
 ```
 
-There's a complete list of operations known to Radiator in [`broadcast_operations.json`](https://github.com/inertia186/radiator/blob/master/lib/radiator/broadcast_operations.json).
+There's a complete list of operations known to Rubybear in [`broadcast_operations.json`](https://github.com/inertia186/rubybear/blob/master/lib/rubybear/broadcast_operations.json).
 
 ## Failover
 
-Radiator supports failover for situations where a node has, for example, become unresponsive.  When creating a new instance of `::Api`, `::Stream`, and `::Transaction`, you may provide a list of alternative nodes, or leave them out to use the default list.  For example:
+Rubybear supports failover for situations where a node has, for example, become unresponsive.  When creating a new instance of `::Api`, `::Stream`, and `::Transaction`, you may provide a list of alternative nodes, or leave them out to use the default list.  For example:
 
 ```ruby
 options = {
@@ -440,21 +440,21 @@ options = {
   ]
 }
 
-api = Radiator::Api.new(options)
+api = Rubybear::Api.new(options)
 ```
 
-In a nutshell, the way this works is Radiator will try a node and proceed until it encounters an error, then retry the request.  If it encounters a second error within 5 minutes, it will abandon the node and try a random one from `failover_urls`.
+In a nutshell, the way this works is Rubybear will try a node and proceed until it encounters an error, then retry the request.  If it encounters a second error within 5 minutes, it will abandon the node and try a random one from `failover_urls`.
 
 It'll keep doing this until it runs out of failovers, then it will reset the configuration and go back to the original node.
 
-Radiator uses an exponential back-off subroutine to avoid slamming nodes when they act up.
+Rubybear uses an exponential back-off subroutine to avoid slamming nodes when they act up.
 
 There's an additional behavior in `::Stream`.  When a node responds with a block out of sequence, it will use the failover logic above.  Although this is not a network layer failure, it is a bad result that may indicate a problem on the node, so a new node is picked.
 
-There is another rare scenario involving `::Transaction` broadcasts that's handled by the failover logic: When a node responds with a network error *after* a signed transaction is accepted, Radiator will do a look-up to find the accepted signature in order to avoid triggering a `dupe_check` error from the blockchain.  This subroutine might take up to five minutes to execute in the worst possible situation.  To disable this behavior, use the `recover_transactions_on_error` and set it to `false`, e.g.:
+There is another rare scenario involving `::Transaction` broadcasts that's handled by the failover logic: When a node responds with a network error *after* a signed transaction is accepted, Rubybear will do a look-up to find the accepted signature in order to avoid triggering a `dupe_check` error from the blockchain.  This subroutine might take up to five minutes to execute in the worst possible situation.  To disable this behavior, use the `recover_transactions_on_error` and set it to `false`, e.g.:
 
 ```ruby
-tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
+tx = Rubybear::Transaction.new(wif: wif, recover_transactions_on_error: false)
 ```
 
 ## Debugging
@@ -462,7 +462,7 @@ tx = Radiator::Transaction.new(wif: wif, recover_transactions_on_error: false)
 To enable debugging, set environment `LOG=DEBUG` before launching your app.  E.g.:
 
 ```bash
-$ LOG=DEBUG irb -rradiator
+$ LOG=DEBUG irb -rrubybear
 ```
 
 This will enable debugging for the `irb` session.
@@ -475,7 +475,7 @@ This will enable debugging for the `irb` session.
 W, [2017-10-10T11:38:30.035318 #6743]  WARN -- : database_api.get_dynamic_global_properties :: Unable to perform request: too many connection resets (due to Net::ReadTimeout - Net::ReadTimeout) after 0 requests on 26665356, last used 1507660710.035165 seconds ago :: cause: Net::ReadTimeout, retrying ...
 ```
 
-This is caused by network interruptions.  If these messages happen once in a while, they can be ignored.  Radiator will retry the request and move on.  If there are more frequent warnings, this will trigger the failover logic and pick a new node, if one has been configured (which is true by default).  See the Failover section above.
+This is caused by network interruptions.  If these messages happen once in a while, they can be ignored.  Rubybear will retry the request and move on.  If there are more frequent warnings, this will trigger the failover logic and pick a new node, if one has been configured (which is true by default).  See the Failover section above.
 
 ## Problem: My log is full of `Invalid block sequence` messages.
 
@@ -483,7 +483,7 @@ This is caused by network interruptions.  If these messages happen once in a whi
 W, [2017-10-10T13:53:24.327177 #6938]  WARN -- : Invalid block sequence at height: 16217674
 ```
 
-This is a similar situation to `Unable to perform request ... retrying ...`.  Radiator::Stream will retry and failover if needed.  It is happening because the node has responded with a block out of order and ::Stream is ignoring this block, then retrying.
+This is a similar situation to `Unable to perform request ... retrying ...`.  Rubybear::Stream will retry and failover if needed.  It is happening because the node has responded with a block out of order and ::Stream is ignoring this block, then retrying.
 
 ## Problem: What does the `Stream behind` error mean?
 
@@ -510,31 +510,31 @@ You're probably creating too many threads or you don't have enough resources for
 Doing this will impact performance because each API call will be a separate socket call.  All of the constructors accept `persist: false`., e.g.:
 
 ```ruby
-api = Radiator::Api.new(persist: false)
+api = Rubybear::Api.new(persist: false)
 ```
 
 ... or ...
 
 ```ruby
-stream = Radiator::Stream.new(persist: false)
+stream = Rubybear::Stream.new(persist: false)
 ```
 
 ... or ...
 
 ```ruby
-tx = Radiator::Transaction.new(options.merge(persist: false, wif: wif))
+tx = Rubybear::Transaction.new(options.merge(persist: false, wif: wif))
 ```
 
 Also see troubleshooting discussion about this situation:
 
-https://github.com/inertia186/radiator/issues/12
+https://github.com/inertia186/rubybear/issues/12
 
 ## Tests
 
 * Clone the client repository into a directory of your choice:
-  * `git clone https://github.com/inertia186/radiator.git`
+  * `git clone https://github.com/inertia186/rubybear.git`
 * Navigate into the new folder
-  * `cd radiator`
+  * `cd rubybear`
 * Basic tests can be invoked as follows:
   * `rake`
 * To run tests with parallelization and local code coverage:
@@ -545,15 +545,15 @@ https://github.com/inertia186/radiator/issues/12
 ---
 
 <center>
-  <img src="http://www.bearsimg.com/images/2016/08/19/RadiatorCoolingFan-54in-Webfdcb1.png" />
+  <img src="http://www.bearsimg.com/images/2016/08/19/RubybearCoolingFan-54in-Webfdcb1.png" />
 </center>
 
-See my previous Ruby How To posts in: [#radiator](https://bearshares.com/created/radiator) [#ruby](https://bearshares.com/created/ruby)
+See my previous Ruby How To posts in: [#rubybear](https://bearshares.com/created/rubybear) [#ruby](https://bearshares.com/created/ruby)
 
 ## Get in touch!
 
-If you're using Radiator, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on BEARS.
+If you're using Rubybear, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on BEARS.
   
 ## License
 
-I don't believe in intellectual "property".  If you do, consider Radiator as licensed under a Creative Commons [![CC0](http://i.creativecommons.org/p/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/) License.
+I don't believe in intellectual "property".  If you do, consider Rubybear as licensed under a Creative Commons [![CC0](http://i.creativecommons.org/p/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/) License.

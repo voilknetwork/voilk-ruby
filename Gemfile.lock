@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    radiator (0.4.3)
+    rubybear (0.4.3)
       awesome_print (~> 1.7, >= 1.7.0)
       bitcoin-ruby (~> 0.0, >= 0.0.11)
       ffi (~> 1.9, >= 1.9.18)
@@ -66,7 +66,7 @@ DEPENDENCIES
   minitest-line (~> 0.6.3)
   minitest-proveit (~> 1.0, >= 1.0.0)
   pry (~> 0.11, >= 0.11.3)
-  radiator!
+  rubybear!
   rake (~> 12.1, >= 12.1.0)
   simplecov (~> 0.16.1)
   vcr (~> 4.0, >= 4.0.0)

@@ -1,11 +1,11 @@
 # Bears chain client for broadcasting common operations.
 # 
-# @see Radiator::Chain
-# @deprecated Using Bears class provided by Radiator is deprecated.  Please use: Radiator::Chain.new(chain: :bears)
-class Bears < Radiator::Chain
+# @see Rubybear::Chain
+# @deprecated Using Bears class provided by Rubybear is deprecated.  Please use: Rubybear::Chain.new(chain: :bears)
+class Bears < Rubybear::Chain
   def initialize(options = {})
     unless defined? @@deprecated_warning_shown
-      warn "[DEPRECATED] Using Bears class provided by Radiator is deprecated.  Please use: Radiator::Chain.new(chain: :bears)"
+      warn "[DEPRECATED] Using Bears class provided by Rubybear is deprecated.  Please use: Rubybear::Chain.new(chain: :bears)"
       @@deprecated_warning_shown = true
     end
     
