@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/inertia186/rubybear.svg?branch=master)](https://travis-ci.org/inertia186/rubybear)
-[![Code Climate](https://codeclimate.com/github/inertia186/rubybear/badges/gpa.svg)](https://codeclimate.com/github/inertia186/rubybear)
-[![Test Coverage](https://codeclimate.com/github/inertia186/rubybear/badges/coverage.svg)](https://codeclimate.com/github/inertia186/rubybear)
-[![Inline docs](http://inch-ci.org/github/inertia186/rubybear.svg?branch=master&style=shields)](http://inch-ci.org/github/inertia186/rubybear)
+[![Build Status](https://travis-ci.org/bearshares/rubybear.svg?branch=master)](https://travis-ci.org/bearshares/rubybear)
+[![Code Climate](https://codeclimate.com/github/bearshares/rubybear/badges/gpa.svg)](https://codeclimate.com/github/bearshares/rubybear)
+[![Test Coverage](https://codeclimate.com/github/bearshares/rubybear/badges/coverage.svg)](https://codeclimate.com/github/bearshares/rubybear)
+[![Inline docs](http://inch-ci.org/github/bearshares/rubybear.svg?branch=master&style=shields)](http://inch-ci.org/github/bearshares/rubybear)
 
-[rubybear](https://github.com/inertia186/rubybear)
+[rubybear](https://github.com/bearshares/rubybear)
 ========
 
 #### BEARS Ruby API Client
@@ -21,7 +21,7 @@ Rubybear is an API Client for interaction with the BEARS network using Ruby.
   2. Short delays (3 times block production) only result in a warning.
   3. Long delays (6 times block production) may try to switch to an alternate node.
 * Fixed internal logging bug that would open too many files.
-  * This fix also mitigates issues like `SSL Verify` problems (similar to [#12](https://github.com/inertia186/rubybear/issues/12))
+  * This fix also mitigates issues like `SSL Verify` problems (similar to [#12](https://github.com/bearshares/rubybear/issues/12))
 * Dropped GOLOS support.
 
 **Appbase is now supported.**
@@ -425,7 +425,7 @@ tx.operations << transfer
 tx.process(true)
 ```
 
-There's a complete list of operations known to Rubybear in [`broadcast_operations.json`](https://github.com/inertia186/rubybear/blob/master/lib/rubybear/broadcast_operations.json).
+There's a complete list of operations known to Rubybear in [`broadcast_operations.json`](https://github.com/bearshares/rubybear/blob/master/lib/rubybear/broadcast_operations.json).
 
 ## Failover
 
@@ -527,12 +527,12 @@ tx = Rubybear::Transaction.new(options.merge(persist: false, wif: wif))
 
 Also see troubleshooting discussion about this situation:
 
-https://github.com/inertia186/rubybear/issues/12
+https://github.com/bearshares/rubybear/issues/12
 
 ## Tests
 
 * Clone the client repository into a directory of your choice:
-  * `git clone https://github.com/inertia186/rubybear.git`
+  * `git clone https://github.com/bearshares/rubybear.git`
 * Navigate into the new folder
   * `cd rubybear`
 * Basic tests can be invoked as follows:
