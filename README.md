@@ -10,7 +10,7 @@
 
 Rubybear is an API Client for interaction with the BEARS network using Ruby.
 
-#### Changes in v0.4.0
+#### Changes in v0.0.2
 
 * Gem updates
 * **AppBase Support**
@@ -21,8 +21,6 @@ Rubybear is an API Client for interaction with the BEARS network using Ruby.
   2. Short delays (3 times block production) only result in a warning.
   3. Long delays (6 times block production) may try to switch to an alternate node.
 * Fixed internal logging bug that would open too many files.
-  * This fix also mitigates issues like `SSL Verify` problems (similar to [#12](https://github.com/bearshares/rubybear/issues/12))
-* Dropped GOLOS support.
 
 **Appbase is now supported.**
 
@@ -33,7 +31,7 @@ If you were already using `Rubybear::Api` then there is nothing to change.  But 
 ```ruby
 api = Rubybear::FollowApi.new
 
-api.get_followers('inertia', 0, 'blog', 10)
+api.get_followers('bilalhaider', 0, 'blog', 10)
 ```
 
 **New Signature:**
@@ -41,7 +39,7 @@ api.get_followers('inertia', 0, 'blog', 10)
 ```ruby
 api = Rubybear::FollowApi.new
 
-api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 10)
+api.get_followers(account: 'bilalhaider', start: 0, type: 'blog', limit: 10)
 ```
 
 *-- or --*
@@ -53,18 +51,11 @@ The other strategy for using this version of Rubybear is to just switch away fro
 ```ruby
 api = Rubybear::Api.new
 
-api.get_followers('inertia', 0, 'blog', 10)
+api.get_followers('bilalhaider', 0, 'blog', 10)
 ```
 
-**Note about GOLOS**
 
-GOLOS is no longer supported in Rubybear.  If you want to continue to use GOLOS, you'll need to branch from v0.3.15 (pre-appbase) and add WebSockets support because GOLOS completely dropped JSON-RPC over HTTP clients support for some reason 
-
-Rubybear has never and will never use WebSockets due to its server scalability requirements.
-
-From a client perspective, WebSockets is *great*.  **I have nothing against WebSockets.**  So I might get around to it at some point, but GOLOS won't be part of Rubybear anymore mainly because GOLOS has no plans to implement AppBase.
-
-#### Changes in v0.3.0
+#### Changes in v0.0.2
 
 * Gem updates
 * Added failover subroutines (see Failover section, below).
@@ -73,19 +64,11 @@ From a client perspective, WebSockets is *great*.  **I have nothing against WebS
 * Added more [documentation](http://www.rubydoc.info/gems/rubybear).
 * Added/expanded more api namespaces: `::BlockApi`, `::CondenserApi`, `::TagApi`
 * Addressed an issue with logging on certain Windows configurations.
-
-#### Fixes in v0.2.3
-
-* Gem updates
 * Added low-level support for persistence and retrying API requests.
 * Now using exponential back-off for retries.
 * Detecting presence of `transaction_ids` (if enabled by the node).
 * Default for `Hashie` warnings now go to `/dev/null`, where they belong.
 * Added stray methods/operations.
-
-#### Fixes in v0.2.2
-
-* Gem updates
 * Improved support for datatypes and handlers.
   * UTF-8 handled more smoothly.
   * Simplified operation construction.
@@ -158,27 +141,9 @@ response.result.virtual_supply
 
 ```ruby
 api = Rubybear::FollowApi.new
-api.get_followers(account: 'inertia', start: 0, type: 'blog', limit: 100) do |followers|
+api.get_followers(account: 'bilalhaider', start: 0, type: 'blog', limit: 100) do |followers|
   followers.map(&:follower)
 end
-=> ["a11at",
- "abarefootpoet",
- "abit",
- "alexgr",
- "alexoz",
- "andressilvera",
- "applecrisp",
- "arrowj",
- "artificial",
- "ash",
- "ausbitbank",
- "beachbum",
- "ben99",
- "benadapt",
- .
- .
- .
- "bearszine"]
 ```
 
 #### Streaming
@@ -380,9 +345,9 @@ Rubybear supports transaction signing, so you can use it to vote:
 tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
 vote = {
   type: :vote,
-  voter: 'xeroc',
-  author: 'xeroc',
-  permlink: 'piston',
+  voter: 'bilalhaider',
+  author: 'bilalhaider',
+  permlink: 'introduction',
   weight: 10000
 }
 
@@ -415,8 +380,8 @@ Transfers:
 tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
 transfer = {
   type: :transfer,
-  from: 'ned',
-  to: 'inertia',
+  from: 'bearshares',
+  to: 'bilalhaider',
   amount: '100000.000 BSD',
   memo: 'Wow, inertia!  Rubybear is great!'
 }
@@ -435,8 +400,8 @@ Rubybear supports failover for situations where a node has, for example, become 
 options = {
   url: 'https://api.bearshares.com',
   failover_urls: [
-    'https://api.bearsharesstage.com',
-    'https://api.bears.house'
+    'https://api2.bearshares.com',
+    'https://api3.bearshares.com'
   ]
 }
 
@@ -525,9 +490,6 @@ stream = Rubybear::Stream.new(persist: false)
 tx = Rubybear::Transaction.new(options.merge(persist: false, wif: wif))
 ```
 
-Also see troubleshooting discussion about this situation:
-
-https://github.com/bearshares/rubybear/issues/12
 
 ## Tests
 
@@ -544,16 +506,14 @@ https://github.com/bearshares/rubybear/issues/12
 
 ---
 
-<center>
-  <img src="http://www.bearsimg.com/images/2016/08/19/RubybearCoolingFan-54in-Webfdcb1.png" />
-</center>
 
 See my previous Ruby How To posts in: [#rubybear](https://bearshares.com/created/rubybear) [#ruby](https://bearshares.com/created/ruby)
 
-## Get in touch!
+## Special Thanks to
 
-If you're using Rubybear, I'd love to hear from you.  Drop me a line and tell me what you think!  I'm @inertia on BEARS.
+If you're using Rubybear, You should know that it was forked from "Radiator" which was created by Anthony Martin
   
 ## License
 
-I don't believe in intellectual "property".  If you do, consider Rubybear as licensed under a Creative Commons [![CC0](http://i.creativecommons.org/p/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/) License.
+We don't believe in licensing.. 
+Use it however you want.
