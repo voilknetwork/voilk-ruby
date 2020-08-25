@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Rubybear
-  class TagApiTest < Rubybear::Test
+module VoilkRuby
+  class TagApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::TagApi.new(chain_options)
+      @api = VoilkRuby::TagApi.new(chain_options)
     end
 
     def test_method_missing

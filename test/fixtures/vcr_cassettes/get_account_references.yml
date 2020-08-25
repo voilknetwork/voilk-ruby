@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.get_account_references","params":[["2.2.27007"]],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -51,9 +51,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","error":{"code":-32003,"message":"Assert Exception:false:
-        condenser_api::get_account_references --- Needs to be refactored for Bears.","data":{"code":10,"name":"assert_exception","message":"Assert
+        condenser_api::get_account_references --- Needs to be refactored for Voilk.","data":{"code":10,"name":"assert_exception","message":"Assert
         Exception","stack":[{"context":{"level":"error","file":"condenser_api.cpp","line":887,"method":"get_account_references","hostname":"","timestamp":"2018-11-03T18:06:01"},"format":"false:
-        condenser_api::get_account_references --- Needs to be refactored for Bears.","data":{}}]}},"id":1}'
+        condenser_api::get_account_references --- Needs to be refactored for Voilk.","data":{}}]}},"id":1}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:06:01 GMT
 recorded_with: VCR 3.0.3

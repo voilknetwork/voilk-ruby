@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"market_history_api.get_ticker","params":{},"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":{"latest":"0.79997715330134800","lowest_ask":"0.79447048542146659","highest_bid":"0.79125661441076112","percent_change":"0.00000000000000000","bears_volume":{"amount":"14554835","precision":3,"nai":"@@000000021"},"bsd_volume":{"amount":"11638041","precision":3,"nai":"@@000000013"}},"id":1}'
+      string: '{"jsonrpc":"2.0","result":{"latest":"0.79997715330134800","lowest_ask":"0.79447048542146659","highest_bid":"0.79125661441076112","percent_change":"0.00000000000000000","voilk_volume":{"amount":"14554835","precision":3,"nai":"@@000000021"},"vsd_volume":{"amount":"11638041","precision":3,"nai":"@@000000013"}},"id":1}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:05:16 GMT
 recorded_with: VCR 3.0.3

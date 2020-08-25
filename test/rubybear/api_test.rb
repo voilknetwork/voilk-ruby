@@ -1,13 +1,13 @@
 require 'test_helper'
 
-module Rubybear
-  class ApiTest < Rubybear::Test
+module VoilkRuby
+  class ApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::Api.new(chain_options.merge(logger: LOGGER))
+      @api = VoilkRuby::Api.new(chain_options.merge(logger: LOGGER))
     end
     
     def test_hashie_logger
-      assert Rubybear::Api.new(chain_options.merge(hashie_logger: 'hashie.log'))
+      assert VoilkRuby::Api.new(chain_options.merge(hashie_logger: 'hashie.log'))
     end
 
     def test_method_missing

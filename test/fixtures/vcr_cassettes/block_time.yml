@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.get_dynamic_global_properties","params":[],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -53,11 +53,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"id":1,"jsonrpc":"2.0","result":{"head_block_number":27382697,"head_block_id":"01a1d3a9acb5350d74126fed59f48dba498b8d72","time":"2018-11-03T18:05:51","current_witness":"utopian-io","total_pow":514415,"num_pow_witnesses":172,"virtual_supply":"298803367.097
-        BEARS","current_supply":"279838984.733 BEARS","confidential_supply":"0.000
-        BEARS","current_bsd_supply":"15228399.039 BSD","confidential_bsd_supply":"0.000
-        BSD","total_coining_fund_bears":"198432600.340 BEARS","total_coining_shares":"400139702865.109022
-        COINS","total_reward_fund_bears":"0.000 BEARS","total_reward_shares2":"0","pending_rewarded_coining_shares":"477736448.160861
-        COINS","pending_rewarded_coining_bears":"234405.215 BEARS","bsd_interest_rate":0,"bsd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477717,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382682,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"bsd_stop_percent":1000,"bsd_start_percent":900}}'
+        VOILK","current_supply":"279838984.733 VOILK","confidential_supply":"0.000
+        VOILK","current_vsd_supply":"15228399.039 VSD","confidential_vsd_supply":"0.000
+        VSD","total_coining_fund_voilk":"198432600.340 VOILK","total_coining_shares":"400139702865.109022
+        COINS","total_reward_fund_voilk":"0.000 VOILK","total_reward_shares2":"0","pending_rewarded_coining_shares":"477736448.160861
+        COINS","pending_rewarded_coining_voilk":"234405.215 VOILK","vsd_interest_rate":0,"vsd_print_rate":10000,"maximum_block_size":65536,"current_aslot":27477717,"recent_slots_filled":"340282366920938463463374607431768211455","participation_count":128,"last_irreversible_block_num":27382682,"vote_power_reserve_rate":10,"delegation_return_period":432000,"reverse_auction_seconds":900,"vsd_stop_percent":1000,"vsd_start_percent":900}}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:05:51 GMT
 recorded_with: VCR 3.0.3

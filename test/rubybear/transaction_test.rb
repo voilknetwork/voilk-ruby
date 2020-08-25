@@ -1,7 +1,7 @@
 require 'test_helper'
 
-module Rubybear
-  class TransactionTest < Rubybear::Test
+module VoilkRuby
+  class TransactionTest < VoilkRuby::Test
     include Utils
     
     def setup
@@ -16,23 +16,23 @@ module Rubybear
         end
       }
       
-      @transaction = Rubybear::Transaction.new(options.dup)
+      @transaction = VoilkRuby::Transaction.new(options.dup)
     end
     
     def test_valid_chains
-      %w(bears test).each do |chain|
+      %w(voilk test).each do |chain|
         io = StringIO.new
         log = Logger.new(io).tap do |logger|
           logger.progname = 'test-valid-chains'
         end
         
         case chain.to_sym
-        when :bears
-          transaction = Rubybear::Transaction.new(chain: chain, logger: log)
-          assert_equal Rubybear::Transaction::NETWORKS_BEARS_CHAIN_ID, transaction.chain_id, 'expect bears chain'
+        when :voilk
+          transaction = VoilkRuby::Transaction.new(chain: chain, logger: log)
+          assert_equal VoilkRuby::Transaction::NETWORKS_VOILK_CHAIN_ID, transaction.chain_id, 'expect voilk chain'
         when :test
           assert_raises ApiError do
-            transaction = Rubybear::Transaction.new(chain: chain, logger: log)
+            transaction = VoilkRuby::Transaction.new(chain: chain, logger: log)
           end
         else
           # :nocov:
@@ -45,12 +45,12 @@ module Rubybear
     
     def test_unknown_chain
       io = StringIO.new
-      Rubybear.logger = Logger.new(io).tap do |logger| # side effect: increase code coverage
+      VoilkRuby.logger = Logger.new(io).tap do |logger| # side effect: increase code coverage
         logger.progname = 'test-unknown-chain'
       end
       chain = 'ginger'
       assert_raises ApiError do
-        Rubybear::Transaction.new(chain: chain)
+        VoilkRuby::Transaction.new(chain: chain)
       end
       refute_equal '', io.string, 'did not expect empty log'
       assert io.string.include?('Unknown chain id'), 'expect log to mention unknown chain id'
@@ -62,7 +62,7 @@ module Rubybear
         logger.progname = 'test-unknown-chain-id'
       end
       unknown_chain_id = 'F' * (256 / 4)
-      Rubybear::Transaction.new(chain_id: unknown_chain_id, logger: log)
+      VoilkRuby::Transaction.new(chain_id: unknown_chain_id, logger: log)
       
       refute_equal '', io.string, 'did not expect empty log'
       assert io.string.include?(unknown_chain_id), 'expect log to mention unknown chain id'
@@ -70,7 +70,7 @@ module Rubybear
     
     def test_wif_and_private_key
       assert_raises TransactionError, 'expect transaction to freak when it sees both' do
-        Rubybear::Transaction.new(wif: 'wif', private_key: 'private key')
+        VoilkRuby::Transaction.new(wif: 'wif', private_key: 'private key')
       end
     end
     
@@ -133,12 +133,12 @@ module Rubybear
       }
       
       # This example serialization was documented by xeroc:
-      # https://bearshares.com/bears/@xeroc/bears-transaction-signing-in-a-nutshell
+      # https://voilk.com/voilk/@xeroc/voilk-transaction-signing-in-a-nutshell
       example_hex = 'bd8c5fe26f45f179a8570100057865726f63057865726f6306706973746f6e102'
       assert hex.include?(example_hex), 'expect example_hex in our result'
       
       # Later correction by xeroc:
-      # https://bearshares.com/bears/@xeroc/bears-transaction-signing-in-a-nutshell#@xeroc/re-bears-transaction-signing-in-a-nutshell-20160901t151404
+      # https://voilk.com/voilk/@xeroc/voilk-transaction-signing-in-a-nutshell#@xeroc/re-voilk-transaction-signing-in-a-nutshell-20160901t151404
       example_hex2 = 'bd8c5fe26f45f179a8570100057865726f63057865726f6306706973746f6e102700'
       assert hex.include?(example_hex2), 'expect example_hex2 in our result'
       
@@ -221,7 +221,7 @@ module Rubybear
       refute_nil _sig_data = @transaction.send(:signature)
     end
     
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L426
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L426
     def test_utf8
       op = {
         type: :comment,
@@ -250,7 +250,7 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '01', hex_segments[:op_id], 'expect op_id'
       assert_equal '00', hex_segments[:parent_author], 'expect parent_author'
@@ -419,14 +419,14 @@ module Rubybear
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L600
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L600
     def test_feed_publish
       op = {
         type: :feed_publish,
         publisher: 'xeroc',
         exchange_rate: {
-          base: '1.000 BSD',
-          quote: '4.123 BEARS'
+          base: '1.000 VSD',
+          quote: '4.123 VOILK'
         }
       }
       
@@ -441,7 +441,7 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '07', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:publisher], 'expect publisher'
@@ -457,7 +457,7 @@ module Rubybear
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L650
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L650
     def test_account_witness_vote
       op = {
         type: :account_witness_vote,
@@ -478,7 +478,7 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '0c', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:account], 'expect account'
@@ -495,7 +495,7 @@ module Rubybear
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L673
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L673
     def test_custom_json
       op = {
         type: :custom_json,
@@ -518,7 +518,7 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '12', hex_segments[:op_id], 'expect op_id'
       assert_equal '00', hex_segments[:required_auths], 'expect required_auths'
@@ -541,14 +541,14 @@ module Rubybear
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
 
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L708
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L708
     def test_comment_options
       op = {
         type: :comment_options,
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: '1000000.000 BSD',
-        percent_bears_dollars: 10000,
+        max_accepted_payout: '1000000.000 VSD',
+        percent_voilk_dollars: 10000,
         allow_votes: true,
         allow_curation_rewards: true,
         extensions: []
@@ -562,7 +562,7 @@ module Rubybear
         author: hex[88..99],
         permlink: hex[100..113],
         max_accepted_payout: hex[114..145],
-        percent_bears_dollars: hex[146..149],
+        percent_voilk_dollars: hex[146..149],
         allow_votes: hex[150..151],
         allow_curation_rewards: hex[152..153],
         op_extensions: hex[154..155]
@@ -570,13 +570,13 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
       assert_equal '06706973746f6e', hex_segments[:permlink], 'expect permlink'
       assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_bears_dollars], 'expect percent_bears_dollars'
+      assert_equal '1027', hex_segments[:percent_voilk_dollars], 'expect percent_voilk_dollars'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
       assert_equal '00', hex_segments[:op_extensions], 'expect op_extensions'
@@ -591,18 +591,18 @@ module Rubybear
       assert compare.include?(op_hex), 'expect final comparison from original test'
     end
     
-    # See: https://github.com/bearshares/bears-python/blob/master/tests/bears/test_transactions.py#L738
+    # See: https://github.com/voilknetwork/voilk-python/blob/master/tests/voilk/test_transactions.py#L738
     def test_comment_options_with_beneficiaries
       op = {
         type: :comment_options,
         author: 'xeroc',
         permlink: 'piston',
-        max_accepted_payout: '1000000.000 BSD',
-        percent_bears_dollars: 10000,
+        max_accepted_payout: '1000000.000 VSD',
+        percent_voilk_dollars: 10000,
         allow_replies: true,
         allow_votes: true,
         allow_curation_rewards: true,
-        extensions: Rubybear::Type::Beneficiaries.new('good-karma' => 2000, 'null' => 5000)
+        extensions: VoilkRuby::Type::Beneficiaries.new('good-karma' => 2000, 'null' => 5000)
       }
       
       @transaction.operations << op
@@ -613,7 +613,7 @@ module Rubybear
         author: hex[88..99],
         permlink: hex[100..113],
         max_accepted_payout: hex[114..145],
-        percent_bears_dollars: hex[146..149],
+        percent_voilk_dollars: hex[146..149],
         allow_replies: hex[150..151],
         allow_votes: hex[152..153],
         allow_curation_rewards: hex[154..155],
@@ -622,13 +622,13 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '057865726f63', hex_segments[:author], 'expect author'
       assert_equal '06706973746f6e', hex_segments[:permlink], 'expect permlink'
       assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_bears_dollars], 'expect percent_bears_dollars'
+      assert_equal '1027', hex_segments[:percent_voilk_dollars], 'expect percent_voilk_dollars'
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'
@@ -649,15 +649,15 @@ module Rubybear
     def test_chronicle_comment_options
       op = {
         type: :comment_options,
-        max_accepted_payout: '1000000.000 BSD',
-        percent_bears_dollars: 10000,
+        max_accepted_payout: '1000000.000 VSD',
+        percent_voilk_dollars: 10000,
         allow_replies: true,
         allow_votes: true,
         allow_curation_rewards: true,
         beneficiaries: [{"inertia":500}],
         author: "social",
         permlink: "lorem-ipsum4",
-        extensions: Rubybear::Type::Beneficiaries.new(inertia: 500)
+        extensions: VoilkRuby::Type::Beneficiaries.new(inertia: 500)
       }
       
       @transaction.operations << op
@@ -668,7 +668,7 @@ module Rubybear
         author: hex[88..101],
         permlink: hex[102..127],
         max_accepted_payout: hex[128..159],
-        percent_bears_dollars: hex[160..163],
+        percent_voilk_dollars: hex[160..163],
         allow_replies: hex[164..165],
         allow_votes: hex[166..167],
         allow_curation_rewards: hex[168..169],
@@ -677,13 +677,13 @@ module Rubybear
       
       decoded_op_id = "0x#{hex_segments[:op_id]}".to_i(16)
       op_type = "#{op[:type]}_operation".to_sym
-      assert_equal Rubybear::OperationIds::IDS.find_index(op_type), decoded_op_id
+      assert_equal VoilkRuby::OperationIds::IDS.find_index(op_type), decoded_op_id
       
       assert_equal '13', hex_segments[:op_id], 'expect op_id'
       assert_equal '06736f6369616c', hex_segments[:author], 'expect author'
       assert_equal '0c6c6f72656d2d697073756d34', hex_segments[:permlink], 'expect permlink'
       assert_equal '00ca9a3b000000000353424400000000', hex_segments[:max_accepted_payout], 'expect max_accepted_payout'
-      assert_equal '1027', hex_segments[:percent_bears_dollars], 'expect percent_bears_dollars'
+      assert_equal '1027', hex_segments[:percent_voilk_dollars], 'expect percent_voilk_dollars'
       assert_equal '01', hex_segments[:allow_replies], 'expect allow_replies'
       assert_equal '01', hex_segments[:allow_votes], 'expect allow_votes'
       assert_equal '01', hex_segments[:allow_curation_rewards], 'expect allow_curation_rewards'

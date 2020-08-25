@@ -6,7 +6,7 @@ if ENV["HELL_ENABLED"]
   SimpleCov.merge_timeout 3600
 end
 
-require 'rubybear'
+require 'voilkruby'
 
 require 'minitest/autorun'
 
@@ -36,17 +36,17 @@ if defined? WebMock
   WebMock.disable_net_connect!(allow_localhost: false, allow: 'codeclimate.com:443')
 end
 
-class Rubybear::Test < MiniTest::Test
+class VoilkRuby::Test < MiniTest::Test
   defined? prove_it! and prove_it!
   
   def chain_options
     {
-      chain: :bears,
-      url: 'https://api.bearshares.com',
+      chain: :voilk,
+      url: 'https://api.voilk.com',
       failover_urls: [
-        'https://api.bearsharesstage.com',
-        'https://api.bearsharesdev.com',
-        'https://api.bears.house',
+        'https://api.voilkstage.com',
+        'https://api.voilkdev.com',
+        'https://api.voilk.house',
       ]
     }
   end

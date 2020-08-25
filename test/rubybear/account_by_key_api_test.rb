@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Rubybear
-  class AccountByKeyApiTest < Rubybear::Test
+module VoilkRuby
+  class AccountByKeyApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::AccountByKeyApi.new(chain_options)
+      @api = VoilkRuby::AccountByKeyApi.new(chain_options)
     end
 
     def test_method_missing

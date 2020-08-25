@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Rubybear
-  class FollowApiTest < Rubybear::Test
+module VoilkRuby
+  class FollowApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::FollowApi.new(chain_options)
+      @api = VoilkRuby::FollowApi.new(chain_options)
     end
 
     def test_method_missing

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.get_accounts","params":[["inertia"]],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -50,15 +50,15 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: ASCII-8BIT
-      string: '{"jsonrpc":"2.0","result":[{"id":19155,"name":"inertia","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR5LC8uBiiaihoPhM16CKktPnfb1Yop7fLicuNVgZm6JvU8yCZ7v",1]]},"active":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR7xf1TJQJty7WF8GHimaYocqdE6rMeZvy4umuU7rHydbfaXRUYB",1]]},"posting":{"weight_threshold":1,"account_auths":[["busy.app",1],["dlike.app",1],["dmania.app",1],["bearspeak.app",1],["wisevote.app",1]],"key_auths":[["SHR5XhxkaVk76j27qjkvoKY7BoHtKAEBA9omgd37zUgpqgB8oN6ov",1]]},"memo_key":"SHR65TuECGXU7bHm5tMrHQVrV8uFdxhwYWZAzzG5658xD5TWuXs4c","json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/i.imgur.com\/LbTz5yg.jpg\",\"cover_image\":\"https:\/\/i.imgur.com\/0ccC6UH.png\",\"name\":\"inertia
-        \u24b6\u00b3\",\"about\":\"I can see the fnords.\",\"location\":\"California\",\"website\":\"https:\/\/bearshares.com\/@inertia\/profile\"}}","proxy":"","last_owner_update":"2018-05-04T15:30:36","last_account_update":"2018-10-10T05:59:21","created":"2016-07-13T06:44:33","mined":false,"recovery_account":"bears","last_account_recovery":"2016-07-21T05:49:33","reset_account":"null","comment_count":0,"lifetime_vote_count":0,"post_count":3368,"can_vote":true,"voting_manabar":{"current_mana":"98477860063617","last_update_time":1541268069},"voting_power":8601,"balance":"89.204
-        BEARS","savings_balance":"0.000 BEARS","bsd_balance":"8141.522 BSD","bsd_seconds":"2703040071543","bsd_seconds_last_update":"2018-11-03T18:01:09","bsd_last_interest_payment":"2018-10-30T21:46:54","savings_bsd_balance":"1560.000
-        BSD","savings_bsd_seconds":"1865856672000","savings_bsd_seconds_last_update":"2017-12-15T19:21:21","savings_bsd_last_interest_payment":"2017-12-03T17:28:57","savings_withdraw_requests":0,"reward_bsd_balance":"0.000
-        BSD","reward_bears_balance":"33.872 BEARS","reward_coining_balance":"906424.286386
-        COINS","reward_coining_bears":"447.544 BEARS","coining_shares":"121211385.104207
+      string: '{"jsonrpc":"2.0","result":[{"id":19155,"name":"inertia","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR5LC8uBiiaihoPhM16CKktPnfb1Yop7fLicuNVgZm6JvU8yCZ7v",1]]},"active":{"weight_threshold":1,"account_auths":[],"key_auths":[["SHR7xf1TJQJty7WF8GHimaYocqdE6rMeZvy4umuU7rHydbfaXRUYB",1]]},"posting":{"weight_threshold":1,"account_auths":[["busy.app",1],["dlike.app",1],["dmania.app",1],["voilkpeak.app",1],["wisevote.app",1]],"key_auths":[["SHR5XhxkaVk76j27qjkvoKY7BoHtKAEBA9omgd37zUgpqgB8oN6ov",1]]},"memo_key":"SHR65TuECGXU7bHm5tMrHQVrV8uFdxhwYWZAzzG5658xD5TWuXs4c","json_metadata":"{\"profile\":{\"profile_image\":\"https:\/\/i.imgur.com\/LbTz5yg.jpg\",\"cover_image\":\"https:\/\/i.imgur.com\/0ccC6UH.png\",\"name\":\"inertia
+        \u24b6\u00b3\",\"about\":\"I can see the fnords.\",\"location\":\"California\",\"website\":\"https:\/\/voilk.com\/@inertia\/profile\"}}","proxy":"","last_owner_update":"2018-05-04T15:30:36","last_account_update":"2018-10-10T05:59:21","created":"2016-07-13T06:44:33","mined":false,"recovery_account":"voilk","last_account_recovery":"2016-07-21T05:49:33","reset_account":"null","comment_count":0,"lifetime_vote_count":0,"post_count":3368,"can_vote":true,"voting_manabar":{"current_mana":"98477860063617","last_update_time":1541268069},"voting_power":8601,"balance":"89.204
+        VOILK","savings_balance":"0.000 VOILK","vsd_balance":"8141.522 VSD","vsd_seconds":"2703040071543","vsd_seconds_last_update":"2018-11-03T18:01:09","vsd_last_interest_payment":"2018-10-30T21:46:54","savings_vsd_balance":"1560.000
+        VSD","savings_vsd_seconds":"1865856672000","savings_vsd_seconds_last_update":"2017-12-15T19:21:21","savings_vsd_last_interest_payment":"2017-12-03T17:28:57","savings_withdraw_requests":0,"reward_vsd_balance":"0.000
+        VSD","reward_voilk_balance":"33.872 VOILK","reward_coining_balance":"906424.286386
+        COINS","reward_coining_voilk":"447.544 VOILK","coining_shares":"121211385.104207
         COINS","delegated_coining_shares":"26063912.414688 COINS","received_coining_shares":"3330387.374098
         COINS","coining_withdraw_rate":"0.000000 COINS","next_coining_withdrawal":"1969-12-31T23:59:59","withdrawn":0,"to_withdraw":0,"withdraw_routes":0,"curation_rewards":3261092,"posting_rewards":18284661,"proxied_vsf_votes":["42841113943027",0,0,0],"witnesses_voted_for":30,"last_post":"2018-11-03T01:14:18","last_root_post":"2018-10-31T14:47:00","last_vote_time":"2018-11-03T01:13:48","post_bandwidth":13323,"pending_claimed_accounts":6,"coining_balance":"0.000
-        BEARS","reputation":"130661134411243","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":["aggroed","anyx","arcange","ausbitbank","blockbrothers","cervantes","emrebeyler","followbtcnews","fyrst-witness","good-karma","gtg","helo","jesta","klye","netuoso","ocd-witness","pfunk","pharesim","qurator","reggaemuffin","riverhead","roelandp","someguy123","bearsgigs","teambears","thecryptodrive","themarkymark","utopian-io","wise-team","yabapmatt"],"tags_usage":[],"guest_bloggers":[]}],"id":1}'
+        VOILK","reputation":"130661134411243","transfer_history":[],"market_history":[],"post_history":[],"vote_history":[],"other_history":[],"witness_votes":["aggroed","anyx","arcange","ausbitbank","blockbrothers","cervantes","emrebeyler","followbtcnews","fyrst-witness","good-karma","gtg","helo","jesta","klye","netuoso","ocd-witness","pfunk","pharesim","qurator","reggaemuffin","riverhead","roelandp","someguy123","voilkgigs","teamvoilk","thecryptodrive","themarkymark","utopian-io","wise-team","yabapmatt"],"tags_usage":[],"guest_bloggers":[]}],"id":1}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:05:58 GMT
 recorded_with: VCR 3.0.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -58,7 +58,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:02 GMT
 - request:
     method: get
-    uri: https://api.bearshares.com/health
+    uri: https://api.voilk.com/health
     body:
       encoding: US-ASCII
       string: ''
@@ -105,7 +105,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:02 GMT
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
@@ -113,7 +113,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -161,7 +161,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:03 GMT
 - request:
     method: get
-    uri: https://api.bears.house/health
+    uri: https://api.voilk.house/health
     body:
       encoding: US-ASCII
       string: ''
@@ -201,7 +201,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:04 GMT
 - request:
     method: get
-    uri: https://api.bearsharesstage.com/health
+    uri: https://api.voilkstage.com/health
     body:
       encoding: US-ASCII
       string: ''
@@ -248,7 +248,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:04 GMT
 - request:
     method: post
-    uri: https://api.bearsharesstage.com/
+    uri: https://api.voilkstage.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
@@ -256,7 +256,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -304,7 +304,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:05:05 GMT
 - request:
     method: get
-    uri: https://api.bearsharesdev.com/health
+    uri: https://api.voilkdev.com/health
     body:
       encoding: US-ASCII
       string: ''
@@ -351,7 +351,7 @@ http_interactions:
   recorded_at: Sat, 03 Nov 2018 18:18:49 GMT
 - request:
     method: post
-    uri: https://api.bearsharesdev.com/
+    uri: https://api.voilkdev.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"network_broadcast_api.broadcast_transaction","params":{},"id":1}'
@@ -359,7 +359,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc2
+      - voilkruby/0.4.3rc2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:

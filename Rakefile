@@ -1,7 +1,7 @@
 require 'bundler/gem_tasks'
 require 'rake/testtask'
 require 'yard'
-require 'rubybear'
+require 'voilkruby'
 require 'awesome_print'
 
 Rake::TestTask.new(:test) do |t|
@@ -32,16 +32,16 @@ desc 'Tests the ability to broadcast live data.  This task broadcasts a claim_re
 task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   account_name = args[:account] || 'social'
   posting_wif = args[:wif] || '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
-  chain = args[:chain] || 'bears'
-  # url = 'https://testnet.bearsharesdev.com/' # use testnet
+  chain = args[:chain] || 'voilk'
+  # url = 'https://testnet.voilkdev.com/' # use testnet
   url = nil # use default
   options = {chain: chain, wif: posting_wif, url: url}
-  tx = Rubybear::Transaction.new(options)
+  tx = VoilkRuby::Transaction.new(options)
   tx.operations << {
     type: :claim_reward_balance,
     account: account_name,
-    reward_bears: '0.000 BEARS',
-    reward_bsd: '0.000 BSD',
+    reward_voilk: '0.000 VOILK',
+    reward_vsd: '0.000 VSD',
     reward_coins: '0.000001 COINS'
   }
   
@@ -51,17 +51,17 @@ task :test_live_broadcast, [:account, :wif, :chain] do |t, args|
   if !!response.result
     result = response.result
     
-    puts "https://bearsd.com/b/#{result[:block_num]}" if !!result[:block_num]
-    puts "https://bearsd.com/tx/#{result[:id]}" if !!result[:id]
+    puts "https://explorer.voilk.com/b/#{result[:block_num]}" if !!result[:block_num]
+    puts "https://explorer.voilk.com/tx/#{result[:id]}" if !!result[:id]
   end
 end
 
-desc 'Tests the ability to stream live data. defaults: chain = bears; persist = true.'
+desc 'Tests the ability to stream live data. defaults: chain = voilk; persist = true.'
 task :test_live_stream, [:chain, :persist] do |t, args|
-  chain = args[:chain] || 'bears'
+  chain = args[:chain] || 'voilk'
   persist = (args[:persist] || 'true') == 'true'
   last_block_number = 0
-  # url = 'https://testnet.bearsharesdev.com/'
+  # url = 'https://testnet.voilkdev.com/'
   url = nil # use default
   options = {chain: chain, persist: persist, url: url}
   total_ops = 0.0
@@ -69,7 +69,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   elapsed = 0
   count = 0
   
-  Rubybear::Stream.new(options).blocks do |b, n, api|
+  VoilkRuby::Stream.new(options).blocks do |b, n, api|
     start = Time.now.utc
     
     if last_block_number == 0
@@ -107,7 +107,7 @@ task :test_live_stream, [:chain, :persist] do |t, args|
         puts "#{n}: #{b.witness}; trx: #{t_size}; op: #{op_size}, vop: #{vop_size} (cumulative vop ratio: #{('%.2f' % (vop_ratio * 100))} %; average #{((elapsed / count) * 1000).to_i}ms)"
       end
     else
-      # This should not happen.  If it does, there's likely a bug in Rubybear.
+      # This should not happen.  If it does, there's likely a bug in VoilkRuby.
       
       puts "Error, last block number was #{last_block_number}, did not expect #{n}."
     end
@@ -116,25 +116,25 @@ task :test_live_stream, [:chain, :persist] do |t, args|
   end
 end
 
-desc 'Ruby console with rubybear already required.'
+desc 'Ruby console with voilkruby already required.'
 task :console do
-  exec "irb -r rubybear -I ./lib"
+  exec "irb -r voilkruby -I ./lib"
 end
 
-desc 'Build a new version of the rubybear gem.'
+desc 'Build a new version of the voilkruby gem.'
 task :build do
-  exec 'gem build rubybear.gemspec'
+  exec 'gem build voilkruby.gemspec'
 end
 
-desc 'Publish the current version of the rubybear gem.'
+desc 'Publish the current version of the voilkruby gem.'
 task :push do
-  exec "gem push rubybear-#{Rubybear::VERSION}.gem"
+  exec "gem push voilkruby-#{VoilkRuby::VERSION}.gem"
 end
 
 # We're not going to yank on a regular basis, but this is how it's done if you
 # really want a task for that for some reason.
 
-# desc 'Yank the current version of the rubybear gem.'
+# desc 'Yank the current version of the voilkruby gem.'
 # task :yank do
-#   exec "gem yank rubybear -v #{Rubybear::VERSION}"
+#   exec "gem yank voilkruby -v #{VoilkRuby::VERSION}"
 # end

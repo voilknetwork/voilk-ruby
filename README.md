@@ -1,22 +1,22 @@
-[![Build Status](https://travis-ci.org/bearshares/rubybear.svg?branch=master)](https://travis-ci.org/bearshares/rubybear)
-[![Code Climate](https://codeclimate.com/github/bearshares/rubybear/badges/gpa.svg)](https://codeclimate.com/github/bearshares/rubybear)
-[![Test Coverage](https://codeclimate.com/github/bearshares/rubybear/badges/coverage.svg)](https://codeclimate.com/github/bearshares/rubybear)
-[![Inline docs](http://inch-ci.org/github/bearshares/rubybear.svg?branch=master&style=shields)](http://inch-ci.org/github/bearshares/rubybear)
+[![Build Status](https://travis-ci.org/voilk/voilkruby.svg?branch=master)](https://travis-ci.org/voilk/voilkruby)
+[![Code Climate](https://codeclimate.com/github/voilk/voilkruby/badges/gpa.svg)](https://codeclimate.com/github/voilk/voilkruby)
+[![Test Coverage](https://codeclimate.com/github/voilk/voilkruby/badges/coverage.svg)](https://codeclimate.com/github/voilk/voilkruby)
+[![Inline docs](http://inch-ci.org/github/voilk/voilkruby.svg?branch=master&style=shields)](http://inch-ci.org/github/voilk/voilkruby)
 
-[rubybear](https://github.com/bearshares/rubybear)
+[voilkruby](https://github.com/voilknetwork/voilkruby)
 ========
 
-#### BEARS Ruby API Client
+#### VOILK Ruby API Client
 
-Rubybear is an API Client for interaction with the BEARS network using Ruby.
+VoilkRuby is an API Client for interaction with the VOILK network using Ruby.
 
 #### Changes in v0.0.2
 
 * Gem updates
 * **AppBase Support**
-  * Defaulting to `condenser_api.*` in `Rubybear::Api` (see below)
+  * Defaulting to `condenser_api.*` in `VoilkRuby::Api` (see below)
   * Handle/recover from new `AppBase` errors.
-* `Rubybear::Stream` now detects if it's stalled and takes action if it has to wait too long for a new block.
+* `VoilkRuby::Stream` now detects if it's stalled and takes action if it has to wait too long for a new block.
   1. Exponential back-off for stalls so that the node doesn't get slammed.
   2. Short delays (3 times block production) only result in a warning.
   3. Long delays (6 times block production) may try to switch to an alternate node.
@@ -24,12 +24,12 @@ Rubybear is an API Client for interaction with the BEARS network using Ruby.
 
 **Appbase is now supported.**
 
-If you were already using `Rubybear::Api` then there is nothing to change.  But if you made use of other API classes, like `Rubybear::FollowApi`, then the method signatures have changed.
+If you were already using `VoilkRuby::Api` then there is nothing to change.  But if you made use of other API classes, like `VoilkRuby::FollowApi`, then the method signatures have changed.
 
 **Pre-AppBase:**
 
 ```ruby
-api = Rubybear::FollowApi.new
+api = VoilkRuby::FollowApi.new
 
 api.get_followers('bilalhaider', 0, 'blog', 10)
 ```
@@ -37,7 +37,7 @@ api.get_followers('bilalhaider', 0, 'blog', 10)
 **New Signature:**
 
 ```ruby
-api = Rubybear::FollowApi.new
+api = VoilkRuby::FollowApi.new
 
 api.get_followers(account: 'bilalhaider', start: 0, type: 'blog', limit: 10)
 ```
@@ -46,10 +46,10 @@ api.get_followers(account: 'bilalhaider', start: 0, type: 'blog', limit: 10)
 
 **Switch to Condenser API:**
 
-The other strategy for using this version of Rubybear is to just switch away from classes like `Rubybear::FollowApi` over to `Rubybear::Api` (also known as `Rubybear::CondenserApi`) instead.  Then you don't have to update individual method calls.
+The other strategy for using this version of VoilkRuby is to just switch away from classes like `VoilkRuby::FollowApi` over to `VoilkRuby::Api` (also known as `VoilkRuby::CondenserApi`) instead.  Then you don't have to update individual method calls.
 
 ```ruby
-api = Rubybear::Api.new
+api = VoilkRuby::Api.new
 
 api.get_followers('bilalhaider', 0, 'blog', 10)
 ```
@@ -61,7 +61,7 @@ api.get_followers('bilalhaider', 0, 'blog', 10)
 * Added failover subroutines (see Failover section, below).
 * Added method closures support (aka passing a block to yield).
 * You can now stream virtual operations (see Streaming section, below).
-* Added more [documentation](http://www.rubydoc.info/gems/rubybear).
+* Added more [documentation](http://www.rubydoc.info/gems/voilkruby).
 * Added/expanded more api namespaces: `::BlockApi`, `::CondenserApi`, `::TagApi`
 * Addressed an issue with logging on certain Windows configurations.
 * Added low-level support for persistence and retrying API requests.
@@ -77,7 +77,7 @@ api.get_followers('bilalhaider', 0, 'blog', 10)
 
 ---
 
-Also see: [Documentation](http://www.rubydoc.info/gems/rubybear)
+Also see: [Documentation](http://www.rubydoc.info/gems/voilkruby)
 
 ---
 
@@ -86,7 +86,7 @@ Also see: [Documentation](http://www.rubydoc.info/gems/rubybear)
 Add the gem to your Gemfile:
 
 ```ruby
-gem 'rubybear'
+gem 'voilkruby'
 ```
 
 Then:
@@ -117,30 +117,30 @@ $ gem install bundler
 ### Usage
 
 ```ruby
-require 'rubybear'
+require 'voilkruby'
 
-api = Rubybear::Api.new
+api = VoilkRuby::Api.new
 api.get_dynamic_global_properties do |properties|
   properties.virtual_supply
 end
-=> "271342874.337 BEARS"
+=> "271342874.337 VOILK"
 ```
 
 ... or ...
 
 ```ruby
-require 'rubybear'
+require 'voilkruby'
 
-api = Rubybear::Api.new
+api = VoilkRuby::Api.new
 response = api.get_dynamic_global_properties
 response.result.virtual_supply
-=> "271342874.337 BEARS"
+=> "271342874.337 VOILK"
 ```
 
 #### Follower API
 
 ```ruby
-api = Rubybear::FollowApi.new
+api = VoilkRuby::FollowApi.new
 api.get_followers(account: 'bilalhaider', start: 0, type: 'blog', limit: 100) do |followers|
   followers.map(&:follower)
 end
@@ -151,9 +151,9 @@ end
 Here's an example of how to use a streaming instance to listen for votes:
 
 ```ruby
-require 'rubybear'
+require 'voilkruby'
 
-stream = Rubybear::Stream.new
+stream = VoilkRuby::Stream.new
 
 stream.operations(:vote) do |op|
   print "#{op.voter} voted for #{op.author}"
@@ -226,8 +226,8 @@ Example of the output:
       "author":"onceuponatime",
       "permlink":"re-mariandavp-re-onceuponatime-re-mariandavp-the-bridge-original-artwork-by-mariandavp-20160917t054726763z",
       "title":"",
-      "body":"https://www.bearsimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg",
-      "json_metadata":"{\"tags\":[\"art\"],\"image\":[\"https://www.bearsimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg\"]}"
+      "body":"https://www.voilkimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg",
+      "json_metadata":"{\"tags\":[\"art\"],\"image\":[\"https://www.voilkimg.com/images/2016/09/17/oldcomputerpics551cb14c.jpg\"]}"
    }
 }
 {
@@ -339,10 +339,10 @@ Example of the output:
 
 #### Transaction Signing
 
-Rubybear supports transaction signing, so you can use it to vote:
+VoilkRuby supports transaction signing, so you can use it to vote:
 
 ```ruby
-tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
+tx = VoilkRuby::Transaction.new(wif: 'Your Wif Here')
 vote = {
   type: :vote,
   voter: 'bilalhaider',
@@ -358,14 +358,14 @@ tx.process(true)
 You can also post/comment:
 
 ```ruby
-tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
+tx = VoilkRuby::Transaction.new(wif: 'Your Wif Here')
 comment = {
   type: :comment,
   parent_permlink: 'test',
   author: 'your-account',
   permlink: 'something-unique',
-  title: 'Rubybear Can Post Comments!',
-  body: 'Yep, this post was created by Rubybear in `ruby`.',
+  title: 'VoilkRuby Can Post Comments!',
+  body: 'Yep, this post was created by VoilkRuby in `ruby`.',
   json_metadata: '',
   parent_author: ''
 }
@@ -377,49 +377,49 @@ tx.process(true)
 Transfers:
 
 ```ruby
-tx = Rubybear::Transaction.new(wif: 'Your Wif Here')
+tx = VoilkRuby::Transaction.new(wif: 'Your Wif Here')
 transfer = {
   type: :transfer,
-  from: 'bearshares',
+  from: 'voilk',
   to: 'bilalhaider',
-  amount: '100000.000 BSD',
-  memo: 'Wow, inertia!  Rubybear is great!'
+  amount: '100000.000 VSD',
+  memo: 'Wow, inertia!  VoilkRuby is great!'
 }
 
 tx.operations << transfer
 tx.process(true)
 ```
 
-There's a complete list of operations known to Rubybear in [`broadcast_operations.json`](https://github.com/bearshares/rubybear/blob/master/lib/rubybear/broadcast_operations.json).
+There's a complete list of operations known to VoilkRuby in [`broadcast_operations.json`](https://github.com/voilknetwork/voilkruby/blob/master/lib/voilkruby/broadcast_operations.json).
 
 ## Failover
 
-Rubybear supports failover for situations where a node has, for example, become unresponsive.  When creating a new instance of `::Api`, `::Stream`, and `::Transaction`, you may provide a list of alternative nodes, or leave them out to use the default list.  For example:
+VoilkRuby supports failover for situations where a node has, for example, become unresponsive.  When creating a new instance of `::Api`, `::Stream`, and `::Transaction`, you may provide a list of alternative nodes, or leave them out to use the default list.  For example:
 
 ```ruby
 options = {
-  url: 'https://api.bearshares.com',
+  url: 'https://api.voilk.com',
   failover_urls: [
-    'https://api2.bearshares.com',
-    'https://api3.bearshares.com'
+    'https://api2.voilk.com',
+    'https://api3.voilk.com'
   ]
 }
 
-api = Rubybear::Api.new(options)
+api = VoilkRuby::Api.new(options)
 ```
 
-In a nutshell, the way this works is Rubybear will try a node and proceed until it encounters an error, then retry the request.  If it encounters a second error within 5 minutes, it will abandon the node and try a random one from `failover_urls`.
+In a nutshell, the way this works is VoilkRuby will try a node and proceed until it encounters an error, then retry the request.  If it encounters a second error within 5 minutes, it will abandon the node and try a random one from `failover_urls`.
 
 It'll keep doing this until it runs out of failovers, then it will reset the configuration and go back to the original node.
 
-Rubybear uses an exponential back-off subroutine to avoid slamming nodes when they act up.
+VoilkRuby uses an exponential back-off subroutine to avoid slamming nodes when they act up.
 
 There's an additional behavior in `::Stream`.  When a node responds with a block out of sequence, it will use the failover logic above.  Although this is not a network layer failure, it is a bad result that may indicate a problem on the node, so a new node is picked.
 
-There is another rare scenario involving `::Transaction` broadcasts that's handled by the failover logic: When a node responds with a network error *after* a signed transaction is accepted, Rubybear will do a look-up to find the accepted signature in order to avoid triggering a `dupe_check` error from the blockchain.  This subroutine might take up to five minutes to execute in the worst possible situation.  To disable this behavior, use the `recover_transactions_on_error` and set it to `false`, e.g.:
+There is another rare scenario involving `::Transaction` broadcasts that's handled by the failover logic: When a node responds with a network error *after* a signed transaction is accepted, VoilkRuby will do a look-up to find the accepted signature in order to avoid triggering a `dupe_check` error from the blockchain.  This subroutine might take up to five minutes to execute in the worst possible situation.  To disable this behavior, use the `recover_transactions_on_error` and set it to `false`, e.g.:
 
 ```ruby
-tx = Rubybear::Transaction.new(wif: wif, recover_transactions_on_error: false)
+tx = VoilkRuby::Transaction.new(wif: wif, recover_transactions_on_error: false)
 ```
 
 ## Debugging
@@ -427,7 +427,7 @@ tx = Rubybear::Transaction.new(wif: wif, recover_transactions_on_error: false)
 To enable debugging, set environment `LOG=DEBUG` before launching your app.  E.g.:
 
 ```bash
-$ LOG=DEBUG irb -rrubybear
+$ LOG=DEBUG irb -rvoilkruby
 ```
 
 This will enable debugging for the `irb` session.
@@ -440,7 +440,7 @@ This will enable debugging for the `irb` session.
 W, [2017-10-10T11:38:30.035318 #6743]  WARN -- : database_api.get_dynamic_global_properties :: Unable to perform request: too many connection resets (due to Net::ReadTimeout - Net::ReadTimeout) after 0 requests on 26665356, last used 1507660710.035165 seconds ago :: cause: Net::ReadTimeout, retrying ...
 ```
 
-This is caused by network interruptions.  If these messages happen once in a while, they can be ignored.  Rubybear will retry the request and move on.  If there are more frequent warnings, this will trigger the failover logic and pick a new node, if one has been configured (which is true by default).  See the Failover section above.
+This is caused by network interruptions.  If these messages happen once in a while, they can be ignored.  VoilkRuby will retry the request and move on.  If there are more frequent warnings, this will trigger the failover logic and pick a new node, if one has been configured (which is true by default).  See the Failover section above.
 
 ## Problem: My log is full of `Invalid block sequence` messages.
 
@@ -448,7 +448,7 @@ This is caused by network interruptions.  If these messages happen once in a whi
 W, [2017-10-10T13:53:24.327177 #6938]  WARN -- : Invalid block sequence at height: 16217674
 ```
 
-This is a similar situation to `Unable to perform request ... retrying ...`.  Rubybear::Stream will retry and failover if needed.  It is happening because the node has responded with a block out of order and ::Stream is ignoring this block, then retrying.
+This is a similar situation to `Unable to perform request ... retrying ...`.  VoilkRuby::Stream will retry and failover if needed.  It is happening because the node has responded with a block out of order and ::Stream is ignoring this block, then retrying.
 
 ## Problem: What does the `Stream behind` error mean?
 
@@ -475,43 +475,43 @@ You're probably creating too many threads or you don't have enough resources for
 Doing this will impact performance because each API call will be a separate socket call.  All of the constructors accept `persist: false`., e.g.:
 
 ```ruby
-api = Rubybear::Api.new(persist: false)
+api = VoilkRuby::Api.new(persist: false)
 ```
 
 ... or ...
 
 ```ruby
-stream = Rubybear::Stream.new(persist: false)
+stream = VoilkRuby::Stream.new(persist: false)
 ```
 
 ... or ...
 
 ```ruby
-tx = Rubybear::Transaction.new(options.merge(persist: false, wif: wif))
+tx = VoilkRuby::Transaction.new(options.merge(persist: false, wif: wif))
 ```
 
 
 ## Tests
 
 * Clone the client repository into a directory of your choice:
-  * `git clone https://github.com/bearshares/rubybear.git`
+  * `git clone https://github.com/voilknetwork/voilkruby.git`
 * Navigate into the new folder
-  * `cd rubybear`
+  * `cd voilkruby`
 * Basic tests can be invoked as follows:
   * `rake`
 * To run tests with parallelization and local code coverage:
   * `HELL_ENABLED=true rake`
-* To run a stream test on the live BEARS blockchain with debug logging enabled:
+* To run a stream test on the live VOILK blockchain with debug logging enabled:
   * `LOG=DEBUG rake test_live_stream`
 
 ---
 
 
-See my previous Ruby How To posts in: [#rubybear](https://bearshares.com/created/rubybear) [#ruby](https://bearshares.com/created/ruby)
+See my previous Ruby How To posts in: [#voilkruby](https://voilk.com/created/voilkruby) [#ruby](https://voilk.com/created/ruby)
 
 ## Special Thanks to
 
-If you're using Rubybear, You should know that it was forked from "Radiator" which was created by Anthony Martin
+If you're using VoilkRuby, You should know that it was forked from "Radiator" which was created by Anthony Martin
   
 ## License
 

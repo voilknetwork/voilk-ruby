@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Rubybear
-  class MarketHistoryApiTest < Rubybear::Test
+module VoilkRuby
+  class MarketHistoryApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::MarketHistoryApi.new(chain_options)
+      @api = VoilkRuby::MarketHistoryApi.new(chain_options)
     end
 
     def test_method_missing

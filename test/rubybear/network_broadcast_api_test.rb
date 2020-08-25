@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Rubybear
-  class NetworkBroadcastApiTest < Rubybear::Test
+module VoilkRuby
+  class NetworkBroadcastApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::NetworkBroadcastApi.new(chain_options)
-      @silent_api = Rubybear::NetworkBroadcastApi.new(chain_options.merge(logger: LOGGER))
+      @api = VoilkRuby::NetworkBroadcastApi.new(chain_options)
+      @silent_api = VoilkRuby::NetworkBroadcastApi.new(chain_options.merge(logger: LOGGER))
     end
 
     def test_method_missing

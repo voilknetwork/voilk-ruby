@@ -319,7 +319,7 @@
       {
          "id":225506,
          "delegator":"minnowbooster",
-         "delegatee":"how2bearshares",
+         "delegatee":"how2voilk",
          "coining_shares":"315000.000000 COINS",
          "min_delegation_time":"2017-08-31T19:45:54"
       },
@@ -774,35 +774,35 @@
       {
          "id":215219,
          "delegator":"minnowbooster",
-         "delegatee":"bearschiller",
+         "delegatee":"voilkchiller",
          "coining_shares":"2441250.000000 COINS",
          "min_delegation_time":"2017-08-27T08:18:27"
       },
       {
          "id":231675,
          "delegator":"minnowbooster",
-         "delegatee":"bearsinfobot",
+         "delegatee":"voilkinfobot",
          "coining_shares":"1077300.000000 COINS",
          "min_delegation_time":"2017-09-04T10:08:12"
       },
       {
          "id":235235,
          "delegator":"minnowbooster",
-         "delegatee":"bearsinformation",
+         "delegatee":"voilkinformation",
          "coining_shares":"157500.000000 COINS",
          "min_delegation_time":"2017-09-06T02:45:33"
       },
       {
          "id":243180,
          "delegator":"minnowbooster",
-         "delegatee":"bearsharesdigest",
+         "delegatee":"voilkdigest",
          "coining_shares":"252630.000000 COINS",
          "min_delegation_time":"2017-09-10T18:20:54"
       },
       {
          "id":247290,
          "delegator":"minnowbooster",
-         "delegatee":"bearsharesdotcom",
+         "delegatee":"voilkdotcom",
          "coining_shares":"2441250.000000 COINS",
          "min_delegation_time":"2017-09-13T06:54:27"
       },

@@ -1,9 +1,9 @@
 require 'test_helper'
 
-module Rubybear
-  class StreamTest < Rubybear::Test
+module VoilkRuby
+  class StreamTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::Stream.new
+      @api = VoilkRuby::Stream.new
     end
 
     def test_method_missing

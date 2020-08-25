@@ -1,61 +1,61 @@
 require 'test_helper'
 
-module Rubybear
-  class ChainTest < Rubybear::Test
+module VoilkRuby
+  class ChainTest < VoilkRuby::Test
     def setup
       options = {
-        chain: :bears,
+        chain: :voilk,
         account_name: 'social',
         wif: '5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC'
       }
       
-      @chain = Rubybear::Chain.new(options)
+      @chain = VoilkRuby::Chain.new(options)
     end
     
     def test_parse_slug
-      author, permlink = Rubybear::Chain.parse_slug '@author/permlink'
+      author, permlink = VoilkRuby::Chain.parse_slug '@author/permlink'
       
       assert_equal 'author', author
       assert_equal 'permlink', permlink
     end
     
     def test_parse_slug_no_at
-      author, permlink = Rubybear::Chain.parse_slug 'author/permlink'
+      author, permlink = VoilkRuby::Chain.parse_slug 'author/permlink'
       
       assert_equal 'author', author
       assert_equal 'permlink', permlink
     end
     
     def test_parse_slug_to_comment_with_comments_anchor
-      url = 'https://bearshares.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-bsd-contest#comments'
-      author, permlink = Rubybear::Chain.parse_slug url
+      url = 'https://voilk.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-vsd-contest#comments'
+      author, permlink = VoilkRuby::Chain.parse_slug url
       
       assert_equal 'howtostartablog', author
-      assert_equal 'the-joke-is-always-in-the-comments-8-bsd-contest', permlink
+      assert_equal 'the-joke-is-always-in-the-comments-8-vsd-contest', permlink
     end
     
     def test_parse_slug_to_comment_with_apache_slash
-      url = 'https://bearshares.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-bsd-contest/'
-      author, permlink = Rubybear::Chain.parse_slug url
+      url = 'https://voilk.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-vsd-contest/'
+      author, permlink = VoilkRuby::Chain.parse_slug url
       
       assert_equal 'howtostartablog', author
-      assert_equal 'the-joke-is-always-in-the-comments-8-bsd-contest', permlink
+      assert_equal 'the-joke-is-always-in-the-comments-8-vsd-contest', permlink
     end
     
     def test_parse_slug_to_comment
-      url = 'https://bearshares.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-bsd-contest#@btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-bsd-contest-20170624t115213474z'
-      author, permlink = Rubybear::Chain.parse_slug url
+      url = 'https://voilk.com/chainbb-general/@howtostartablog/the-joke-is-always-in-the-comments-8-vsd-contest#@btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-vsd-contest-20170624t115213474z'
+      author, permlink = VoilkRuby::Chain.parse_slug url
       
       assert_equal 'btcvenom', author
-      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-bsd-contest-20170624t115213474z', permlink
+      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-vsd-contest-20170624t115213474z', permlink
     end
     
     def test_parse_slug_to_comment_no_at
-      url = 'btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-bsd-contest-20170624t115213474z'
-      author, permlink = Rubybear::Chain.parse_slug url
+      url = 'btcvenom/re-howtostartablog-the-joke-is-always-in-the-comments-8-vsd-contest-20170624t115213474z'
+      author, permlink = VoilkRuby::Chain.parse_slug url
       
       assert_equal 'btcvenom', author
-      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-bsd-contest-20170624t115213474z', permlink
+      assert_equal 're-howtostartablog-the-joke-is-always-in-the-comments-8-vsd-contest-20170624t115213474z', permlink
     end
     
     def test_find_block
@@ -132,7 +132,7 @@ module Rubybear
         body: 'body of my post (archive: edited)',
         tags: ['tag'],
         self_upvote: 10000,
-        percent_bears_dollars: 0
+        percent_voilk_dollars: 0
       }
       
       vcr_cassette('post!') do

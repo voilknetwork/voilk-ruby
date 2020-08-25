@@ -1,10 +1,10 @@
 require 'test_helper'
 
-module Rubybear
-  class CondenserApiTest < Rubybear::Test
+module VoilkRuby
+  class CondenserApiTest < VoilkRuby::Test
     def setup
-      @api = Rubybear::CondenserApi.new(chain_options)
-      @silent_api = Rubybear::CondenserApi.new(chain_options.merge(logger: LOGGER))
+      @api = VoilkRuby::CondenserApi.new(chain_options)
+      @silent_api = VoilkRuby::CondenserApi.new(chain_options.merge(logger: LOGGER))
     end
     
     def test_method_missing

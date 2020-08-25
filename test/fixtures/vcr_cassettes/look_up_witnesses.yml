@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bearshares.com/
+    uri: https://api.voilk.com/
     body:
       encoding: UTF-8
       string: '{"jsonrpc":"2.0","method":"condenser_api.lookup_witness_accounts","params":["",19],"id":1}'
@@ -10,7 +10,7 @@ http_interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - rubybear/0.4.3rc1
+      - voilkruby/0.4.3rc1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -50,7 +50,7 @@ http_interactions:
       - upgrade-insecure-requests
     body:
       encoding: UTF-8
-      string: '{"jsonrpc":"2.0","result":["a-0","a-h","a-pile-of-bears","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":1}'
+      string: '{"jsonrpc":"2.0","result":["a-0","a-h","a-pile-of-voilk","a-z","a001","a01.cshrem","a02.cshrem","a0de6qzchbut","a1i-00ba0eb5","a1i-01e13986","a1i-03a7078f","a1i-04a70788","a1i-04ba0eb1","a1i-05a70789","a1i-06a7078a","a1i-06ba0eb3","a1i-06e13981","a1i-07a7078b","a1i-07ba0eb2"],"id":1}'
     http_version: 
   recorded_at: Sat, 03 Nov 2018 18:05:20 GMT
 recorded_with: VCR 3.0.3
